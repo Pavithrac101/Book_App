@@ -64,6 +64,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public boolean returnBook(String bookId, String userId) {
+       Book book = bookRepository.findById(bookId).orElse(null)
         return false;
     }
 
