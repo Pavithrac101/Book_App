@@ -46,7 +46,20 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book updateBook(String title, Book book) {
-        return null;
+        Book existingBook = bookRepository.findById(title);
+        if (existingBook != null) {
+            existingBook.setTitle(updateBook().getTitle());
+            existingBook.setTitle(updateBook().getDescription());
+            existingBook.setTitle(updateBook().getIsbn());
+            existingBook.setTitle(updateBook().getAuthor());
+            existingBook.setTitle(updateBook().getGenre());
+            existingBook.setTitle(updateBook().getLanguage());
+            existingBook.setTitle(updateBook().getAcquisitionDate());
+            existingBook.setTitle(updateBook().getPageCount());
+            existingBook.setTitle(updateBook().getPublicationYear());
+            existingBook.setTitle(updateBook().getPrice());
+        }
+        return bookRepository.save(existingBook);
     }
 
     @Override
