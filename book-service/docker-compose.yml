@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  mongodbservice:
+    image: mongo:latest
+    container_name: mongo-Container
+    networks:
+      - book-network
+    ports:
+      - "27017:27017"
+
+  book-service:
+    container_name: book-service
+    build: book-service/
+    hostname: localhost
+    networks:
+      - book-network
+    ports:
+      - "5555:5555"
+    depends_on:
+      - mongodbservice
+    restart: always
+
+networks:
+  book-network:
+    driver: bridge
+
