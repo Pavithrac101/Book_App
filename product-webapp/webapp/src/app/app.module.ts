@@ -77,12 +77,43 @@ imports: [
   MatIconModule,
   MatTableModule,
   MatToolbarModule,
-  
+
 
 
 ],
 providers: [],
-bootstrap: [AppComponent]
+bootstrap: [AppComponent],
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    UserRegistrationComponent,
+    UserLoginComponent,
+    UserProfileComponent,
+    HomeComponent,
+    AboutUsComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,FormsModule,
+    HttpClientModule,
+
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatIconModule,
+    MatTableModule,
+    MatToolbarModule
+
+
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-  
+
 export class AppModule { }

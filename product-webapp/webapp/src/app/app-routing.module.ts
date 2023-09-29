@@ -35,6 +35,23 @@ const routes: Routes = [
     component: AboutUsComponent,
     path: 'about-us',
   },
+  {
+    component: HomeComponent,
+    path: '',
+  },
+  { component: UserRegistrationComponent, path: 'user-registration' },
+  {
+    component: UserLoginComponent,
+    path: 'user-login',
+  },
+  {
+    component: UserProfileComponent,
+    path: 'user-profile',
+  },
+  {
+    component: AboutUsComponent,
+    path: 'about-us',
+  },
 ];
 
 @NgModule({
