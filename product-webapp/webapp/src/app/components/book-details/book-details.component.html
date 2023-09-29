@@ -1,0 +1,75 @@
+<!-- <div class="container mt-4">
+    <h2>Book Details</h2>
+    <div class="card-body">
+    <div class="card book-details" *ngIf="book">
+      <img src="{{ book.imageURL }}" alt="{{ book.title }}" class="book-image">
+        <h5 class="card-title">Book Title:{{ book.title}}</h5>
+      <p class="card-text"><strong>Description:</strong> {{ book.description }}</p>
+      <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+      <p class="card-text"><strong>Genre:</strong> {{ book.genre }}</p>
+      <p class="card-text"><strong>Language:</strong> {{ book.language }}</p>
+      <p class="card-text"><strong>Price:</strong> ${{ book.price }}</p>
+      <p class="card-text"><strong>Publisher:</strong> {{ book.publisher }}</p>
+      <p class="card-text"><strong>Publication Year:</strong> {{ book.publicationYear }}</p>
+      <p class="card-text"><strong>Page Count:</strong> {{ book.pageCount }}</p>
+    </div>
+  </div>
+    <div *ngIf="!book">
+      <p>Book not found.</p>
+    </div>
+    <a routerLink="/">Back to Book List</a>
+  </div>
+   -->
+   <!-- <div class="container mt-4"> -->
+    <!-- <h2>Book Details</h2> -->
+    <!-- <div class="card-body">
+      <div class="card book-details" *ngIf="book">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{{ book.imageURL }}" alt="{{ book.title }}" class="book-image-medium">
+          </div>
+          <div class="col-md-8">
+            <h5 class="card-title">Book Title: {{ book.title }}</h5>
+            <p class="card-text"><strong>Description:</strong> {{ book.description }}</p>
+            <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+            <p class="card-text"><strong>Genre:</strong> {{ book.genre }}</p>
+            <p class="card-text"><strong>Language:</strong> {{ book.language }}</p>
+            <p class="card-text"><strong>Publisher:</strong> {{ book.publisher }}</p>
+            <p class="card-text"><strong>Publication Year:</strong> {{ book.publicationYear }}</p>
+            <p class="card-text"><strong>Page Count:</strong> {{ book.pageCount }}</p>
+            <p class="card-text"><strong>Price:</strong> ${{ book.price }}</p>
+            <button class="btn btn-primary btn-sm">Buy Now</button>
+            <button class="btn btn-primary btn-sm" (click)="addToCart()">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!book">
+      <p>Book not found.</p>
+    </div>
+    <a routerLink="/">Back to Book List</a>
+  </div>
+   -->
+   <mat-card class="book-details">
+    <mat-card-header class="book-details-header">
+      <mat-card-title class="book-details-left">{{ book.title }}</mat-card-title>
+      <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="book-details-image" src="{{ book.imageURL }}" alt="{{ book.title }}" style="width: 320px; height: 400px;">
+  
+   <div class="content">
+    <mat-card-content class="book-details-content">
+      <p>{{ book.description }}</p>
+      <p><strong>Genre:</strong> {{ book.genre }}</p>
+      <p><strong>Language:</strong> {{ book.language }}</p>
+      <p><strong>Publisher:</strong> {{ book.publisher }}</p>
+      <p><strong>Publication Year:</strong> {{ book.publicationYear }}</p>
+      <p><strong>Page Count:</strong> {{ book.pageCount }}</p>
+      <p><strong>Price:</strong> ${{ book.price }}</p>
+    </mat-card-content></div>
+    <mat-card-actions class="book-details-actions">
+      <button mat-raised-button color="primary"
+       (click)="addToCart()">Add to Cart</button>
+      <button mat-raised-button color="primary">Buy Now</button>
+    </mat-card-actions>
+  </mat-card>
