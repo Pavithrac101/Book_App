@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Book } from './models/book.model';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { Book } from './models/book.model';
 })
 export class AppComponent {
   title = 'webapp';
-  static addcart: any[]=[]; 
 }

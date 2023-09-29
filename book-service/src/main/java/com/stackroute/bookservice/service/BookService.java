@@ -14,7 +14,7 @@ public interface BookService {
     boolean removeBook(int bookId) throws BookNotFoundException;
     List<Book> getAllBooks();
 
-    Book getBookByBookId(int bookId) throws BookNotFoundException;
+    List<Book> getBookByBookId(int bookId) throws BookNotFoundException;
     Book updateBook( int bookId,Book book) throws BookNotFoundException;
     boolean returnBook(int bookId) throws   BookNotFoundException;
     boolean sellBook(int bookId);

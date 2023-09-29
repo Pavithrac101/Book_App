@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("*")
 @RequestMapping("/api/v1")
 public class BookController {
     @Autowired
@@ -56,12 +55,12 @@ public class BookController {
           return new ResponseEntity<>("Book Object Null",HttpStatus.NOT_FOUND);
         }
     }
-    // http://localhost:5555/api/v1/book/{bookId}
-    @GetMapping("/book/{bookId}")
-    public ResponseEntity<?> getBookById(@PathVariable int bookId) throws BookNotFoundException{
-        if( bookId != -1){
+    // http://localhost:5555/api/v1/book/{bokId}
+    @GetMapping("/book/{bokId}")
+    public ResponseEntity<?> getBookById(int bokId) throws BookNotFoundException{
+        if( bokId != -1){
         try {
-            Book book = this.bookService.getBookByBookId(bookId);
+            List<Book> book = this.bookService.getBookByBookId(bokId);
             return ResponseEntity.ok(book);
         } catch (BookNotFoundException ex) {
             throw new BookNotFoundException();

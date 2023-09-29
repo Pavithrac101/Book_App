@@ -11,6 +11,7 @@ services:
   book-service:
     container_name: book-service
     build: book-service/
+    hostname: localhost
     networks:
       - book-network
     ports:
