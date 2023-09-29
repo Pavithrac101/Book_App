@@ -1,0 +1,46 @@
+/* Add some padding and margin to the container for spacing */
+.container {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Style the card headers */
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  /* Center the card image */
+  .card-img-top {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Add a border and some box-shadow for a clean look */
+  .card {
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add some spacing between cards */
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
+  
+  /* Center the "View Details" button */
+  .btn-primary {
+    display: block;
+    margin: 10px auto;
+  }
+  
+  /* Style the overall page heading */
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  

@@ -45,11 +45,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> getBookByBookId(int bookId) throws BookNotFoundException {
-       if (this.bookRepository.findBookByBookId(bookId).isEmpty()){
+    public Book getBookByBookId(int bookId) throws BookNotFoundException {
+       if (this.bookRepository.findById(bookId).isEmpty()){
            throw new BookNotFoundException();
        }else {
-        return this.bookRepository.findBookByBookId(bookId);}
+        return this.bookRepository.findById(bookId).get();}
     }
 
     @Override
@@ -76,6 +76,11 @@ public class BookServiceImpl implements BookService {
        }
            if (book.getPrice() != -1.0f) {
                retrivedBook.setPrice(book.getPrice());
+           }
+           if(book.getPublicationYear()!= -1){
+               retrivedBook.setPublicationYear(book.getPublicationYear());
+           }if(book.getImageURL()!= null){
+               retrivedBook.setImageURL(book.getImageURL());
            }
 //           if (book.isAvailable()) {
 //               retrivedBook.setAvailable(true);

@@ -16,5 +16,5 @@ public interface BookRepository extends MongoRepository<Book, Integer> {
 //    List<User> findByTitle(String title);
 //    Optional<User> findUserByUserName(String username);
 @Query("{'bookId' : {$eq: [?0]}}")
-List<Book> findBookByBookId(int bookId);
+Book findBookByBookId(int bookId);
 }
