@@ -6,11 +6,25 @@
 }
 .card {
   width: 400px;
-  height: 400px;
+  height: 550px;
+}
+.hero-image {
+  background-image: url('https://as1.ftcdn.net/v2/jpg/04/90/51/38/1000_F_490513853_kAVSEYFTKn4FIi7mm63yIiXSVRxj10NH.jpg');
+ /* background-image: url('/webapp/src/assets/images/bk.jpg'); */
+  background-size: cover;
+  background-position: center;
+  height: 600px; /* Adjust the height as needed */
+}
+
+.heading{
+text-align:start;
+margin: 30px;
+padding: 30px;
+/* font-weight:bolder; */
 }
 .card img {
   width: 100%;
-  height: 250px;
+  height: 370px;
   object-fit:fill;
 }
 @media (max-width: 768px) {
