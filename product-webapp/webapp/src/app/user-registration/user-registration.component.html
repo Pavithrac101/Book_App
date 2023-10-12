@@ -4,8 +4,8 @@
         <form class="form" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
             <fieldset class="backcolor">
                    <mat-form-field appearance="fill">
-                         <input matInput placeholder="name" type="text" id="name" formControlName="name" />
-                        <mat-error *ngIf="name?.errors?.required">
+                         <input matInput placeholder="UserName" type="text" id="username" formControlName="userName" />
+                        <mat-error *ngIf="username?.errors?.required">
                          Name is required.
                         </mat-error>
                     </mat-form-field>
@@ -38,9 +38,9 @@
                      </mat-error>
                 </mat-form-field>
                <mat-form-field appearance="fill">
-                       <input matInput placeholder="Role" type="text" id="role" formControlName="role" />
-                       <mat-error *ngIf="role?.errors?.required">
-                        Role is required.
+                       <input matInput placeholder="UserId" type="text" id="userid" formControlName="userid" />
+                       <mat-error *ngIf="userid?.errors?.required">
+                        UserId is required.
                       </mat-error>
                </mat-form-field>
             
@@ -50,6 +50,10 @@
                          Valid phone number contains 10 digits starting with 7/8/9
                         </mat-error>
                 </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <input matInput placeholder="Occupation" type="text" id="occupation" formControlName="occupation" />
+                  
+               </mat-form-field>
                 
                <mat-form-field appearance="fill">
                   <input matInput placeholder="Address" type="text" id="address" formControlName="address" />

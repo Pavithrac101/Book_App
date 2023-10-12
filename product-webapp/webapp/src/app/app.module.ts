@@ -21,6 +21,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { UserupdateComponent } from './userupdate/userupdate.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     UserLoginComponent,
     UserProfileComponent,
     HomeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    UserupdateComponent
   ],
   imports: [
     BrowserModule,

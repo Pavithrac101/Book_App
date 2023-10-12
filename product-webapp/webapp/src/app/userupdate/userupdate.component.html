@@ -1,0 +1,41 @@
+<div   class="update-details">
+
+    <form class="form" (ngSubmit)="onUpdate()" >
+    <fieldset class="backcolor">
+      <mat-form-field appearance="fill">
+        <input matInput  [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"placeholder="UserName" type="text" id="userName"  />
+       
+   </mat-form-field>
+          
+<mat-form-field appearance="fill">
+  <input matInput  [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"placeholder="email" type="text" id="email"  />
+ 
+</mat-form-field>
+<mat-form-field appearance="fill">
+<input matInput [(ngModel)]="user.userId" [ngModelOptions]="{standalone: true}" placeholder="userId" type="text" id="userId"  />
+
+</mat-form-field>
+<mat-form-field appearance="fill">
+<input matInput [(ngModel)]="user.phoneNo" [ngModelOptions]="{standalone: true}" type="text" placeholder="phoneNo" id="phoneNo"
+/>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="user.address" [ngModelOptions]="{standalone: true}" type="text" placeholder="address" id="address"
+    />
+</mat-form-field>
+    <mat-form-field appearance="fill">
+        <input matInput [(ngModel)]="user.occupation" [ngModelOptions]="{standalone: true}" type="text" placeholder="occupation" id="occupation"
+        />
+
+</mat-form-field>
+
+
+
+
+    </fieldset>
+<button color="primary" mat-button mat-raised-button 
+type="submit">Update-details</button>
+
+
+</form>
+</div>
