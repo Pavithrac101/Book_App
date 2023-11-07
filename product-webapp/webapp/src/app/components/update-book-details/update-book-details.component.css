@@ -1,0 +1,26 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border: 30px;
+    /* border-color: rgb(9, 9, 9); */
+    background-color:rgb(246, 255, 254);
+    width: 600px;
+    margin: 0 auto; /* Center the form horizontally */
+  box-sizing: border-box;
+  }
+  .header{
+    margin-top: 10px;
+    text-align: center;
+  }
+.form-group {
+    margin: 10px 0;
+    width: 100%;
+  }
+.full-width {
+    width: 100%;
+    max-width: 600px; /* Adjust this value to control the width of the input fields */
+  }

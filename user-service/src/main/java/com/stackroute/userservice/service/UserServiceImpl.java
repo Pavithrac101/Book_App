@@ -8,6 +8,8 @@ import com.stackroute.userservice.repository.UserServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -32,10 +34,34 @@ public class UserServiceImpl implements UserService{
         }
         return user;
     }
+    @Override
+    public User viewUserProfile(String email) {
+        return this.userServiceRepository.findByEmail(email);
+    }
+
 
 
     @Override
-    public User updateUser(User user) {
-        return null;
+    public User updateUser(User user,String email) {
+        Optional<User> optUser=userServiceRepository.findById(user.getEmail());
+        if (optUser.isEmpty())
+        {
+            return  null;
+        }
+        User existingUser = optUser.get();
+        if(user.getUserName()!= null){
+            existingUser.setUserName(user.getUserName());
+        }
+        if(user.getPhoneNo()!= null){
+            existingUser.setPhoneNo(user.getPhoneNo());
+        }
+        if(user.getAddress()!=null){
+            existingUser.setAddress(user.getAddress());
+        }
+        if(user.getOccupation()!=null){
+            existingUser.setOccupation(user.getOccupation());
+        }
+
+        return this.userServiceRepository.save(existingUser);
     }
 }

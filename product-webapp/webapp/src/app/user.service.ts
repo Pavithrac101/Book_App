@@ -10,7 +10,7 @@ import { User } from './module/user';
 export class UserService {
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
   isLogInError=new EventEmitter<boolean>(false);
- private baseUrl = 'http://localhost:8085/api/auth/v1/register';
+ private baseUrl = 'http://localhost:8081/api/v2/adduser';
  private baseUrl1 = 'http://localhost:8085/api/auth/v1/login';
 
   requestHeader = new HttpHeaders({ 'Authorization': 'True' });
@@ -46,7 +46,7 @@ getUsers(email:string){
   });
   let requestOptions={headers : httpHeader}
   console.log(requestOptions);
-  return this.http.get<User>(`http://localhost:8081/api/${email}`,requestOptions);
+  return this.http.get<User>(`http://localhost:8081/api/user/${email}`,requestOptions);
 }
 updateDetails(_email:any,data:any):Observable<any>{
   const token = localStorage.getItem("jwt");
@@ -57,6 +57,6 @@ updateDetails(_email:any,data:any):Observable<any>{
   console.log(requestOptions);
   
   // let email='Wrc123456';
-  return this.http.put('http://localhost:8081/api/${email}',data);
+  return this.http.put('http://localhost:8081/api/userdata/${email}',data);
 }
 }

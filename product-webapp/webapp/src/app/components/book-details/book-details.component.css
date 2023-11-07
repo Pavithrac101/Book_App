@@ -1,0 +1,120 @@
+/* .container {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    text-align: left;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  /* Style the book image */
+  /* .book-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the "Back to Book List" link */
+  /* a {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.25rem 1rem;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s, color 0.3s;
+  } */
+  
+  /* a:hover {
+    background-color: #007bff;
+    color: #fff;
+  } */
+/* Style the book image */
+/* .book-image {
+    max-width: 200px; 
+    max-height: 200px;
+     width: auto;
+    height: auto;
+    margin-bottom: 1rem;
+  }  */
+  .book-details {
+    display: grid;
+    height: 65vh;
+    margin:80px;
+    grid-template-columns: .6fr 2fr;
+   
+   grid-gap: .2rem;
+    padding: 10px;
+    grid-template-areas: "mat-card-header mat-card-header""img mat-card-content""img mat-card-content""img mat-card-actions";
+    
+   
+  }
+  .book-details-header,
+  .book-details-header {
+    grid-row: 1;
+    grid-area: mat-card-header;
+    /* padding: 5px; */
+    /* width: 300px;
+    height: 100px; */
+   
+    
+    
+  }
+  .book-details-image {
+    
+    grid-row: 2;
+    grid-area: img;
+    /* border: 2px solid; */
+
+  }
+  
+  .book-details-content {
+    grid-area: mat-card-content;
+    /* border: 2px solid brown; */
+    margin-bottom: -30px;
+    
+  }
+  .book-details-actions { 
+   gap: 10px;
+    grid-area: mat-card-actions;
+  }
+  .book-details-actions {
+    grid-row: 3; 
+    margin-top: 30px;
+
+/* border: 2px solid ; */
+   
+   
+  }
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,231 @@
+<div class="container">
+    <h1 class="header">Update Book</h1>
+  
+    <form #addForm="ngForm" class="form-container">
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="bookId">Book Id</mat-label>
+        <input
+        matInput
+          type="number"
+          class="form-control"
+          id="bookId"
+          [(ngModel)]="book.bookId"
+          name="bookId"
+          #bookId="ngModel"
+          required
+        />
+      </mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="title">title</mat-label>
+        <input
+        matInput
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="book.title"
+          name="title"
+          #title="ngModel"
+          required
+        /></mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="isbn">Isbn</mat-label>
+        <input
+        matInput
+          type="number"
+          class="form-control"
+          id="isbn"
+          [(ngModel)]="book.isbn"
+          name="isbn"
+          #isbn="ngModel"
+          required
+        /></mat-form-field>
+      </div>
+  
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="publicationYear">publicationYear</mat-label>
+        <input
+        matInput
+        type="number"
+          class="form-control"
+          id="publicationYear"
+          
+          [(ngModel)]="book.publicationYear"
+          name="publicationYear"
+          #publicationYear="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="genre">genre</mat-label>
+        <input
+        matInput
+        type="text"
+          class="form-control"
+          id="genre"
+          
+          [(ngModel)]="book.genre"
+          name="genre"
+          #genre="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="language">language</mat-label>
+        <input
+        matInput
+        type="text"
+          class="form-control"
+          id="language"
+          
+          [(ngModel)]="book.language"
+          name="language"
+          #language="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="pageCount">pageCount</mat-label>
+        <input
+        matInput
+        type="number"
+          class="form-control"
+          id="pageCount"
+          
+          [(ngModel)]="book.pageCount"
+          name="pageCount"
+          #pageCount="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="description">description</mat-label>
+        <input
+        matInput
+        type="text"
+          class="form-control"
+          id="description"
+          
+          [(ngModel)]="book.description"
+          name="description"
+          #description="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="price">price</mat-label>
+        <input
+        matInput
+        type="number"
+          class="form-control"
+          id="price"
+          
+          [(ngModel)]="book.price"
+          name="price"
+          #price="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="available">available</mat-label>
+        <input
+        matInput
+        type="text"
+          class="form-control"
+          id="available"
+          
+          [(ngModel)]="book.available"
+          name="available"
+          #available="ngModel"
+          ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="author">author</mat-label>
+        <input
+        matInput
+        type="text"
+          class="form-control"
+          id="author"
+          
+          [(ngModel)]="book.author"
+          name="author"
+          #author="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="publisher">publisher</mat-label>
+        <input
+        matInput
+        type="text"
+          class="form-control"
+          id="publisher"
+         
+          [(ngModel)]="book.publisher"
+          name="publisher"
+          #publisher="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="rented">rented</mat-label>
+        <input
+        matInput
+        type="text"
+          class="form-control"
+          id="rented"
+          
+          [(ngModel)]="book.rented"
+          name="rented"
+          #rented="ngModel"
+        ></mat-form-field>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="imageURL">imageURL</label>
+        <input
+        type="url"
+          class="form-control"
+          id="imageURL"
+        
+          [(ngModel)]="book.imageURL"
+          name="imageURL"
+          #imageURL="ngModel"
+        >
+      </div> -->
+      <div class="form-group">
+        <mat-form-field class="full-width">
+        <mat-label for="imageURL">imageURL</mat-label>
+        <input
+        type="url"
+        matInput
+          class="form-control"
+          id="imageURL"
+        
+          [(ngModel)]="book.imageURL"
+          name="imageURL"
+          #imageURL="ngModel"
+        ></mat-form-field>
+      </div>
+  
+      <button mat-raised-button color="primary" type="submit" class="btn btn-primary" (click)="submitForm()">Update</button>
+    </form>
+  </div>
+  
