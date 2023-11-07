@@ -6,10 +6,8 @@ import com.stackroute.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("/api/v2")
@@ -32,5 +30,15 @@ public class UserServiceController {
 
         return responseEntity;
 
+    }
+    @GetMapping("/user/{email}")
+    public ResponseEntity<?> getUserDetails(@PathVariable String email){
+        User user=userService.viewUserProfile(email);
+        return new ResponseEntity<>(user,HttpStatus.OK);
+    }
+    @PutMapping("/userdata/{email}")
+    public ResponseEntity<?> updateUser(@RequestBody User user, @PathVariable String email){
+        User user1 = userService.updateUser(user,email);
+        return new ResponseEntity<>(user1, HttpStatus.OK);
     }
 }

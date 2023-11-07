@@ -11,6 +11,9 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { UserupdateComponent } from './userupdate/userupdate.component';
+import { DeauthgaurdGuard } from './deauthgaurd.guard';
+import { AuthgaurdGuard } from './authgaurd.guard';
 
 const routes: Routes = [
   { path: 'book-details/:id', component: BookDetailsComponent },
@@ -22,19 +25,21 @@ const routes: Routes = [
     component: HomeComponent,
     path: '',
   },
-  { component: UserRegistrationComponent, path: 'user-registration' },
+  {component:UserRegistrationComponent,
+  path:'user-registration'},
   {
-    component: UserLoginComponent,
-    path: 'user-login',
-  },
-  {
-    component: UserProfileComponent,
-    path: 'user-profile',
-  },
-  {
-    component: AboutUsComponent,
-    path: 'about-us',
-  },
+    component:UserLoginComponent,
+    path:'user-login'
+ },
+ {
+  component:UserProfileComponent,
+  path:'user-profile'
+},
+{
+  component:AboutUsComponent,
+  path:'about-us'
+},
+
 ];
 
 @NgModule({

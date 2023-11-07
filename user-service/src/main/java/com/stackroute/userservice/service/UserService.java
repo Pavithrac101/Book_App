@@ -5,5 +5,6 @@ import com.stackroute.userservice.exception.UserAlreadyExitsException;
 
 public interface UserService {
     User registerUser(User user) throws UserAlreadyExitsException;
-    User updateUser(User user);
+    User viewUserProfile(String email);
+    User updateUser(User user , String email);
 }

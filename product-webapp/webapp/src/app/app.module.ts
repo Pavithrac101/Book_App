@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { HeaderComponent } from './components/header/header.component';
+
 // import { BookCardComponent } from './components/book-card/book-card.component';
 // import { BookListComponent } from './components/book-list/book-list.component';
 // import { BookManagerComponent } from './components/book-manager/book-manager.component';
@@ -14,12 +14,10 @@ import { UpdateBookDetailsComponent } from './components/update-book-details/upd
 import { CreateBookComponent } from './components/create-book/create-book.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './header/header.component';
-import {MatSelectModule} from '@angular/material/select';
 // import { UpdateBookComponent } from './components/update-book/update-book.component';
 // import { AddBookComponent } from './components/add-book/add-book.component'
 
-// import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -37,11 +35,21 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 // import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { UserupdateComponent } from './userupdate/userupdate.component';
+import {MatSelectModule} from '@angular/material/select';
 
-@NgModule({declarations: [
-  AppComponent,
-  HeaderComponent,
-  // BookCardComponent,
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    UserRegistrationComponent,
+    UserLoginComponent,
+    UserProfileComponent,
+    HomeComponent,
+    AboutUsComponent,
+    UserupdateComponent,
+  //   BookCardComponent,
   // BookListComponent,
   // BookManagerComponent,
   BookDetailsComponent,
@@ -51,24 +59,14 @@ import { AboutUsComponent } from './about-us/about-us.component';
   AddToCartComponent,
   // UpdateBookComponent,
   // AddBookComponent
-
-  UserRegistrationComponent,
-  UserLoginComponent,
-  UserProfileComponent,
-  HomeComponent,
-  AboutUsComponent
-
-],
-imports: [
-  BrowserModule,
-  AppRoutingModule,
-
-  HttpClientModule,
-  FormsModule,
-
-  BrowserAnimationsModule,FormsModule,
-  HttpClientModule,
-
+  ],
+  imports: [BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
@@ -79,11 +77,13 @@ imports: [
   MatTableModule,
   MatToolbarModule,
   MatSelectModule
+  ],
 
-
-],
 providers: [],
 bootstrap: [AppComponent]
 })
   
-export class AppModule { }
+export class AppModule{}
+
+
+
