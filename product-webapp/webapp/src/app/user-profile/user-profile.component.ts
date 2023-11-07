@@ -12,7 +12,7 @@ import { UserService } from '../user.service';
 export class UserProfileComponent implements OnInit {
   userForm=this.fb.group({
     email:['',Validators.required],
-    userid:['',Validators.required],
+    userId:['',Validators.required],
     username:['',Validators.required],
     password:['',Validators.required],
     phoneNo:['',Validators.required],

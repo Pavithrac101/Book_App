@@ -14,11 +14,11 @@ export class UserRegistrationComponent implements OnInit {
   authError:String='';
   message:any="You are logged in successfully"
   profileForm = this.fb.group({
-    username: ['', Validators.required],
+    userName: ['', Validators.required],
     email:['',Validators.required],
     password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)]],
     confirmPassword: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)]],
-    userid: ['', Validators.required],
+    userId: ['', Validators.required],
     phNo: ['', [Validators.pattern(/^[789]\d{9,9}$/)]],
     occupation:[''],
     address: [''],
@@ -30,11 +30,11 @@ export class UserRegistrationComponent implements OnInit {
   });
   constructor(private register:UserService,private router:Router,private fb:FormBuilder,private _snackBar: MatSnackBar
     ){}
-    get username() { return this.profileForm.get("username") }
+    get userName() { return this.profileForm.get("userName") }
 
     get email() { return this.profileForm.get("email") }
   
-    get userid() { return this.profileForm.get("userid") }
+    get userId() { return this.profileForm.get("userId") }
   
     get phNo() { return this.profileForm.get("phNo"); }
   

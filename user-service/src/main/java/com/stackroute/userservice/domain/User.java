@@ -19,5 +19,5 @@ public class User {
     private String userId;
     private String userName;
     private String password,phoneNo,occupation;
-    private Address address;
+    private String address;
 }

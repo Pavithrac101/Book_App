@@ -34,10 +34,11 @@ export class UserLoginComponent  implements OnInit{
         this.responseData=response;
         console.log(this.responseData.Token);
         console.log(this.responseData.Message);
+        console.log(this.responseData.email)
         localStorage.setItem("jwt",this.responseData.Token);
         
          
-         this.router.navigate(['/user-profile']);
+         this.router.navigate(['']);
         
       },
      error:(err) => {
