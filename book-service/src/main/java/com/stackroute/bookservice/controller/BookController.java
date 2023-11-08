@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -92,14 +93,19 @@ public class BookController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book not found with ID: " + bookId, ex);
         }
     }
-    // http://localhost:5555/api/v1/sellBook/{bookId}
+    // http://localhost:5555/api/v1/sellBook
 
     // Controller method for selling a book
-    @PutMapping("/sellBook/{bookId}")
-    public ResponseEntity<?> sellBook(@PathVariable int bookId) {
-        boolean success = this.bookService.sellBook(bookId);
-        if (success) {
-            return ResponseEntity.ok("Book sold successfully.");
+    @PostMapping("/sellBook")
+    public ResponseEntity<?> sellBook( @RequestBody Book book, HttpServletRequest request) {
+        System.out.println("entering the handler method");
+        String email=(String)request.getAttribute("a");
+        book.setSellerEmailId(email);
+        Book success = this.bookService.sellBook(book);
+        System.out.println(email);
+
+        if (success!=null) {
+            return new ResponseEntity<>(bookService.sellBook(book),HttpStatus.OK);
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Book not found or not available for sale.");
         }

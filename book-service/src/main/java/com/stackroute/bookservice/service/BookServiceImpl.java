@@ -8,6 +8,7 @@ import com.stackroute.bookservice.model.RentalInfo;
 import com.stackroute.bookservice.model.User;
 import com.stackroute.bookservice.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -117,27 +118,10 @@ public class BookServiceImpl implements BookService {
 
 
     @Override
-    public boolean sellBook(int bookId) {
-        Optional<Book> optionalBook = bookRepository.findById(bookId);
-
-        if (optionalBook.isPresent()) {
-            Book book = optionalBook.get();
-
-            // Check if the book is available for sale
-            if (book.isAvailable()) {
-                // Update the book status to sold
-                book.setAvailable(false);
-
-                // Save the updated book
-                bookRepository.save(book);
-
-                return true; // Return true to indicate successful sale
-            }
-        }
-
-        // If the book is not found or not available for sale, return false
-        return false;
-
+    public Book sellBook(Book book) {
+        Book optionalBook = bookRepository.save(book);
+        System.out.println("Result from repository::"+optionalBook);
+        return optionalBook;
     }
 
     @Override

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+
 public interface BookRepository extends MongoRepository<Book, Integer> {
 //@Query("{'books.title' : {$in : [?0]}}")
 //    List<User> findByTitle(String title);

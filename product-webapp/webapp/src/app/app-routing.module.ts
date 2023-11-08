@@ -16,24 +16,24 @@ import { DeauthgaurdGuard } from './deauthgaurd.guard';
 import { AuthgaurdGuard } from './authgaurd.guard';
 
 const routes: Routes = [
-  { path: 'book-details/:id', component: BookDetailsComponent },
-  { path: 'view-books', component: ViewBooksComponent },
-  { path: 'update-book-details/:id', component: UpdateBookDetailsComponent },
-  { path: 'create-book', component: CreateBookComponent },
-  { path: 'add-to-cart', component: AddToCartComponent },
+  { path: 'book-details/:id', component: BookDetailsComponent, },
+  { path: 'view-books', component: ViewBooksComponent ,canActivate:[AuthgaurdGuard]},
+  { path: 'update-book-details/:id', component: UpdateBookDetailsComponent,canActivate:[AuthgaurdGuard] },
+  { path: 'create-book', component: CreateBookComponent ,canActivate:[AuthgaurdGuard]},
+  { path: 'add-to-cart', component: AddToCartComponent,canActivate:[AuthgaurdGuard] },
   {
     component: HomeComponent,
     path: '',
   },
   {component:UserRegistrationComponent,
-  path:'user-registration'},
+  path:'user-registration',canDeactivate:[DeauthgaurdGuard]},
   {
     component:UserLoginComponent,
     path:'user-login'
  },
  {
   component:UserProfileComponent,
-  path:'user-profile'
+  path:'user-profile',canActivate:[AuthgaurdGuard]
 },
 {
   component:AboutUsComponent,
