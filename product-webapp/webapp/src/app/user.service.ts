@@ -14,7 +14,7 @@ export class UserService {
  private baseUrl1 = 'http://localhost:8085/api/auth/v1/login';
 
   requestHeader = new HttpHeaders({ 'Authorization': 'True' });
-  constructor(private http:HttpClient,private router:ActivatedRoute) { }
+  constructor(private http:HttpClient) { }
   userSignUp(data:any): Observable<any>{
     return this.http.post(this.baseUrl,data);
   }

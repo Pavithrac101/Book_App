@@ -66,8 +66,8 @@ import { UserupdateComponent } from './userupdate/userupdate.component';
     HttpClientModule,
     FormsModule,
   
-    BrowserAnimationsModule,FormsModule,
-    HttpClientModule,
+    BrowserAnimationsModule,
+    
   
     MatButtonModule,
     MatFormFieldModule,
@@ -77,15 +77,9 @@ import { UserupdateComponent } from './userupdate/userupdate.component';
     MatCardModule,
     MatIconModule,
     MatTableModule,
-    MatToolbarModule,
-  ]}),
-
-
-
-  
-
+    MatToolbarModule
+  ],
 providers: [],
 bootstrap: [AppComponent]
 })
-  
 export class AppModule { }
