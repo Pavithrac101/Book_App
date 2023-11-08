@@ -30,6 +30,8 @@ public class ReadWagonFilter extends GenericFilter {
         //
         Claims claims = Jwts.parser().setSigningKey("secretKeyWave47").parseClaimsJws(token).getBody();    //jwts. parser it will convert to singningkey.//getbody will ready from client.//this finly will retives the clams
         request.setAttribute("claims",claims);
+        String Email1=(String)claims.get("email");
+        request.setAttribute("Email",Email1);
         filterChain.doFilter(request, response); //filter Chain==>will give a connecting filter and controller is called filter chain.
 
         //filter chain is interface

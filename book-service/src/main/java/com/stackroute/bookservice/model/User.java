@@ -17,7 +17,7 @@ public class User {
         @MongoId
         private int userId;
         private String userName;
-//        private String emailId;
+        private String email;
         private ArrayList<Book> books;
 
 }

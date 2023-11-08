@@ -30,4 +30,5 @@ public class Book {
     private String publisher;
     private boolean rented;
     private String imageURL;
+    private String sellerEmailId;
 }

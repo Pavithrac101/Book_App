@@ -17,7 +17,7 @@ public interface BookService {
     Book getBookByBookId(int bookId) throws BookNotFoundException;
     Book updateBook( int bookId,Book book) throws BookNotFoundException;
     boolean returnBook(int bookId) throws   BookNotFoundException;
-    boolean sellBook(int bookId);
+    Book sellBook(Book book);
     boolean rentBook(int bookId);
 
 }
