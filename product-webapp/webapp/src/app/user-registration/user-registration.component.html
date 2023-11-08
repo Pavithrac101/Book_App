@@ -1,11 +1,11 @@
 <div class="register">
     <div *ngIf="!showLogin" class="sign-up">
         <h1>Registration Form</h1>
-        <form class="form" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+        <form class="regForm" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
             <fieldset class="backcolor">
                    <mat-form-field appearance="fill">
-                         <input matInput placeholder="UserName" type="text" id="username" formControlName="userName" />
-                        <mat-error *ngIf="username?.errors?.required">
+                         <input matInput placeholder="userName" type="text" id="userName" formControlName="userName" />
+                        <mat-error *ngIf="userName?.errors?.required">
                          Name is required.
                         </mat-error>
                     </mat-form-field>
@@ -38,8 +38,8 @@
                      </mat-error>
                 </mat-form-field>
                <mat-form-field appearance="fill">
-                       <input matInput placeholder="UserId" type="text" id="userid" formControlName="userid" />
-                       <mat-error *ngIf="userid?.errors?.required">
+                       <input matInput placeholder="userId" type="text" id="userId" formControlName="userId" />
+                       <mat-error *ngIf="userId?.errors?.required">
                         UserId is required.
                       </mat-error>
                </mat-form-field>

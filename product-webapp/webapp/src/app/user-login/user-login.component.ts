@@ -38,7 +38,7 @@ export class UserLoginComponent  implements OnInit{
         localStorage.setItem("jwt",this.responseData.Token);
         
          
-         this.router.navigate(['/user-profile']);
+         this.router.navigate(['']);
         
       },
      error:(err) => {

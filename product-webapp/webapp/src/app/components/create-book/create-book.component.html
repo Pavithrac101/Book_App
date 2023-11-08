@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="header">Create Book</h1>
+    <h1 class="header">Add Book</h1>
   
     <form (submit)="submitForm()" class="form-container">
         <ng-container *ngIf="!submitted">
@@ -66,15 +66,15 @@
       <div class="form-group">
       <mat-form-field class="full-width">
         <mat-label for="genre">genre</mat-label>
-        <input
-        matInput
-        type="text"
-          class="form-control"
-          id="genre"
-          rows="3"
-          [(ngModel)]="book.genre"
-          name="genre"
-        >
+        <mat-select [(ngModel)]="book.genre" name="genre" id="genre">
+          <mat-option value="option1">Self-Help Book</mat-option>
+          <mat-option value="option2">Tragedy</mat-option>
+          <mat-option value="option3">Personal Development, spiritual</mat-option>
+          <mat-option value="option3">comedy ,romance, drama</mat-option>
+          <mat-option value="option3"> Moral Book</mat-option>
+          <mat-option value="option3">Science and Fiction</mat-option>
+          <!-- Add more options as needed -->
+        </mat-select>
       </mat-form-field>
       </div>
 
@@ -183,7 +183,7 @@
       </mat-form-field>
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
       <mat-form-field class="full-width">
         <mat-label for="rented">rented</mat-label>
         <input
@@ -196,7 +196,7 @@
           name="rented"
         >
       </mat-form-field>
-      </div>
+      </div> -->
 
       <div class="form-group">
       <mat-form-field class="full-width">
@@ -212,7 +212,7 @@
         >
         </mat-form-field>
   </div>
-      <button mat-raised-button type="submit" color="primary"class="btn btn-primary">Create</button>
+      <button mat-raised-button type="submit" color="primary"class="btn btn-primary">Add</button>
         </ng-container>
     <div *ngIf="submitted">
         <h4>Book was submitted successfully!</h4>
