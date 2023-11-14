@@ -1,6 +1,6 @@
 package com.stackroute.userservice.service;
 
-import com.stackroute.userservice.config.Producer;
+//import com.stackroute.userservice.config.Producer;
 import com.stackroute.userservice.domain.User;
 import com.stackroute.userservice.exception.UserAlreadyExitsException;
 import com.stackroute.userservice.rabbitmq.domain.UserDTO;
@@ -15,8 +15,8 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserServiceRepository userServiceRepository;
-    @Autowired
-    Producer producer;
+//    @Autowired
+//    Producer producer;
     @Override
     public User registerUser(User user) throws UserAlreadyExitsException {
         UserDTO userdto=new UserDTO();
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService{
         else {
             userServiceRepository.save(user);
             System.out.println("saved user in mongo");
-            producer.sendMessageToRabbitMq(userdto);
+//            producer.sendMessageToRabbitMq(userdto);
         }
         return user;
     }

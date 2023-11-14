@@ -16,25 +16,25 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/api/v1")
+//@CrossOrigin("*")
+@RequestMapping("/api/v2")
 public class BookController {
     @Autowired
     private BookService bookService;
 // http://localhost:5555/api/v1/bookService/add
-    @PostMapping("/bookService/add")
-    public ResponseEntity<?> addBook(@RequestBody Book book) throws BookAlreadyExistsException{
-       if (book != null){
-          try{ Book saveBook = bookService.addBook(book);
-           return  new ResponseEntity<>(saveBook, HttpStatus.CREATED);
-       } catch(BookAlreadyExistsException exception){
-              throw exception;
-          } catch (Exception e){
-              return new ResponseEntity<>("Error ! try after sometimes",HttpStatus.NOT_FOUND);
-          } }else {
-           return new ResponseEntity<>("Book Object Null",HttpStatus.NOT_FOUND);
-       }
-    }
+//    @PostMapping("/bookService/add")
+//    public ResponseEntity<?> addBook(@RequestBody Book book) throws BookAlreadyExistsException{
+//       if (book != null){
+//          try{ Book saveBook = bookService.addBook(book);
+//           return  new ResponseEntity<>(saveBook, HttpStatus.CREATED);
+//       } catch(BookAlreadyExistsException exception){
+//              throw exception;
+//          } catch (Exception e){
+//              return new ResponseEntity<>("Error ! try after sometimes",HttpStatus.NOT_FOUND);
+//          } }else {
+//           return new ResponseEntity<>("Book Object Null",HttpStatus.NOT_FOUND);
+//       }
+//    }
     // http://localhost:5555/api/v1/bookService/remove/{id}
     @DeleteMapping("/bookService/remove/{id}")
     public ResponseEntity<?> removeBookById(@PathVariable int id) throws BookNotFoundException {
@@ -50,6 +50,7 @@ public class BookController {
     // http://localhost:5555/api/v1/books
     @GetMapping("/books")
     public ResponseEntity<?> getAllBooks(){
+        System.out.println("The get all books being called");
         List<Book> books =bookService.getAllBooks();
         if (books != null){
         return new ResponseEntity<>(books,HttpStatus.OK);}
