@@ -10,7 +10,7 @@ import { User } from './module/user';
 export class UserService {
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
   isLogInError=new EventEmitter<boolean>(false);
- private baseUrl = 'http://localhost:8081/api/v2/adduser';
+ private baseUrl = 'http://localhost:8085/api/auth/v1/register';
  private baseUrl1 = 'http://localhost:8085/api/auth/v1/login';
 
   requestHeader = new HttpHeaders({ 'Authorization': 'True' });

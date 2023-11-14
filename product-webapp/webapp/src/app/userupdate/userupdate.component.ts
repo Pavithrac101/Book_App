@@ -29,7 +29,7 @@ export class UserupdateComponent implements OnInit{
     this.userservice.updateDetails(this.user?.email,this.user).subscribe(
       {next:(response) => {
         console.log(response);
-        this.router.navigate(['/registerhome']);
+        this.router.navigate(['/user-profile']);
       },
      error:(err) => {
         console.log(err);}

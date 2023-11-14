@@ -10,12 +10,20 @@ import { UserService } from '../user.service';
 export class HeaderComponent implements OnInit  {
   menuType:string='default'
   name:string=""
+ 
   constructor(private route:Router,private userService:UserService){
-
+    
+  
   }
   ngOnInit(): void {
    this.route .events.subscribe((val:any)=>{
-   
+   if(val.url){
+    if(localStorage.getItem('user') && (val.url.incudes('user'))){
+      this.menuType='user'
+    }
+    else
+    this.menuType='default'
+   }
     
    })
   }
@@ -25,11 +33,8 @@ logout(){
      this.route.navigate([''])
 }
 data:any
-// isLoggedIn() {
-//   return this.userService.userLogIn(this.data);
-// }
-isAdmin(){
-
+isLoggedIn() {
+  return this.userService.userLogIn(this.data);
 }
 
 }

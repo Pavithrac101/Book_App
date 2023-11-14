@@ -1,11 +1,8 @@
+
 <div>
-    <a class="auth-toggle-link" *ngIf="!showLogin" (click)="openLogin()" routerLink="register" >Already have account? Click for Login</a>
-</div>
-<div>
-    <div *ngIf="showLogin" class="sign-up">
+    <div  class="sign-up">
         <h1>Login</h1>
-        <p class="error-p">{{authError}}</p>
-        <form class="form" (ngSubmit)="login()" [formGroup]="loginForm">
+        <form class="form"(ngSubmit)="onSubmit()" [formGroup]="loginForm">
            <fieldset class="backcolor">
             <mat-form-field appearance="fill">
                 <input matInput type="email" placeholder="email" id="email"

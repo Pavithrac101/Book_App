@@ -1,15 +1,15 @@
 <mat-toolbar color="primary" class="navbar"> 
     <span>ReadWagon</span>
     <span class="space-buttons"></span>
-    <button   (click)="logout()" mat-raised-button color="warn">Logout</button>
+    <button *ngIf="menutype===''"(click)="logout()" mat-raised-button color="warn">Logout</button>
   
-    <button mat-raised-button color="primary" routerLink="/user-login">Login</button>
-  </mat-toolbar>
+    <button *ngIf="isLoggedIn()"mat-raised-button color="primary" routerLink="/user-login">Login</button>
   
-  <mat-toolbar color="primary" >
+
+
     <button mat-raised-button color="primary" routerLink="/">Home</button>
     <button mat-raised-button color="primary" routerLink="/create-book">Sell Book</button>
-    <button mat-raised-button color="primary" routerLink="/user-registration">Register</button>
+    <button   mat-raised-button color="primary" routerLink="/user-registration">Register</button>
     
     <button mat-raised-button color="primary" routerLink="/about-us">About Us</button>
 </mat-toolbar>

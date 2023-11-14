@@ -22,12 +22,10 @@ export class UserLoginComponent  implements OnInit{
   get email() { return this.loginForm.get("email") }
   get password() { return this.loginForm.get("password"); }
   ngOnInit(): void {}
-  openLogin(){
-    this.showLogin=true;
-  }
   responseData:any;
-    login():void{
+    onSubmit():void{
     console.log(this.loginForm.value);
+    
     this.register.userLogIn(this.loginForm.value).subscribe(
       {next:(response) => {
         console.log(response);
@@ -38,7 +36,7 @@ export class UserLoginComponent  implements OnInit{
         localStorage.setItem("jwt",this.responseData.Token);
         
          
-         this.router.navigate(['']);
+         this.router.navigate(['/user-profile']);
         
       },
      error:(err) => {

@@ -1,6 +1,7 @@
 package com.stackroute.userauthentication.controller;
 
-import com.stackroute.userauthentication.config.Consumer;
+//import com.stackroute.userauthentication.config.Consumer;
+import com.stackroute.userauthentication.domain.SignupData;
 import com.stackroute.userauthentication.domain.User;
 import com.stackroute.userauthentication.exception.InvalidCredentialException;
 import com.stackroute.userauthentication.service1.UserService;
@@ -18,17 +19,26 @@ public class UserController {
     private UserService userService;
     private SecurityTokenGenerator securityTokenGenerator;
 
-    @Autowired
-    private Consumer consumer;
+//    @Autowired
+//    private Consumer consumer;
 
     @Autowired
     public UserController(UserService userService, SecurityTokenGenerator securityTokenGenerator) {
         this.userService = userService;
         this.securityTokenGenerator = securityTokenGenerator;
     }
+    @PostMapping("/register")
+    public ResponseEntity regisUser(@RequestBody SignupData signUpData) {
+        System.out.println(signUpData);
+
+//            signUpData.setRole("Admin_User");  //assign default value to the role
+        return new ResponseEntity(userService.registerUserUsingFC(signUpData), HttpStatus.CREATED);
+
+
+    }
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User user) throws InvalidCredentialException {
-        User retrievedUser = userService.findByEmailAndPassword(user.getEmail(), user.getPassword());
+        User retrievedUser = userService.checkLogin(user.getEmail(), user.getPassword());
         if (retrievedUser == null) {
             throw new InvalidCredentialException();
         } else {

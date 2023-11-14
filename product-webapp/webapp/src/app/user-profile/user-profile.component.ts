@@ -10,16 +10,16 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  userForm=this.fb.group({
-    email:['',Validators.required],
-    userId:['',Validators.required],
-    username:['',Validators.required],
-    password:['',Validators.required],
-    phoneNo:['',Validators.required],
-    occupation:['',Validators.required],
-    address:['',Validators.required]
+  // userForm=this.fb.group({
+  //   email:['',Validators.required],
+  //   userId:['',Validators.required],
+  //   username:['',Validators.required],
+  //   password:['',Validators.required],
+  //   phoneNo:['',Validators.required],
+  //   occupation:['',Validators.required],
+  //   address:['',Validators.required]
     
-  })
+  // })
     user:User[]=[]
   @Input()
   userdata?: User

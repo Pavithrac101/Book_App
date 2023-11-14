@@ -50,7 +50,7 @@ export class UserRegistrationComponent implements OnInit {
       {next:(response) => {
         console.log(response);
         
-        this.router.navigate(['']);
+        this.router.navigate(['/user-login']);
       },
      error:(err) => {
         console.log(err);}
