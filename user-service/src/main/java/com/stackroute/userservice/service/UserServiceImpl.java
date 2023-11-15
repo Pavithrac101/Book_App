@@ -1,6 +1,6 @@
 package com.stackroute.userservice.service;
 
-import com.stackroute.userservice.config.Producer;
+//import com.stackroute.userservice.config.Producer;
 import com.stackroute.userservice.domain.User;
 import com.stackroute.userservice.exception.UserAlreadyExitsException;
 import com.stackroute.userservice.rabbitmq.domain.UserDTO;
@@ -8,6 +8,7 @@ import com.stackroute.userservice.repository.UserServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,8 +16,8 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserServiceRepository userServiceRepository;
-    @Autowired
-    Producer producer;
+//    @Autowired
+//    Producer producer;
     @Override
     public User registerUser(User user) throws UserAlreadyExitsException {
         UserDTO userdto=new UserDTO();
@@ -30,16 +31,19 @@ public class UserServiceImpl implements UserService{
         else {
             userServiceRepository.save(user);
             System.out.println("saved user in mongo");
-            producer.sendMessageToRabbitMq(userdto);
+//            producer.sendMessageToRabbitMq(userdto);
         }
         return user;
     }
     @Override
-    public User viewUserProfile(String email) {
-        return this.userServiceRepository.findByEmail(email);
+
+    public  List<User> getAllUsers(String email) {
+
+        return this.userServiceRepository.findAll();
+
+
+
     }
-
-
 
     @Override
     public User updateUser(User user,String email) {

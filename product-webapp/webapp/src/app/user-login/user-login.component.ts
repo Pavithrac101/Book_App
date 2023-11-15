@@ -28,13 +28,17 @@ export class UserLoginComponent  implements OnInit{
     
     this.register.userLogIn(this.loginForm.value).subscribe(
       {next:(response) => {
+        console.clear();
         console.log(response);
         this.responseData=response;
         console.log(this.responseData.Token);
         console.log(this.responseData.Message);
         console.log(this.responseData.email)
         localStorage.setItem("jwt",this.responseData.Token);
-        
+        this._snackBar.open('Congrats!!You have Loggedin Sucessfully!!', 'success', {
+          duration: 1000,
+          panelClass: ['mat-toolbar', 'mat-primary']
+        });
          
          this.router.navigate(['/user-profile']);
         
@@ -43,10 +47,7 @@ export class UserLoginComponent  implements OnInit{
         console.log(err);}
       }
       ) 
-      this._snackBar.open('Congrats!!You have Loggedin Sucessfully!!', 'success', {
-        duration: 5000,
-        panelClass: ['mat-toolbar', 'mat-primary']
-      });
+     
        this.loginForm.reset();
   
     

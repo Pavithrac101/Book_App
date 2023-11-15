@@ -33,7 +33,7 @@ public class SecurityTokenGenerator implements ISecurityTokenGenerator{
 
         result.put("Token",myToken);
         result.put("Message","User Logged in successfully");
-        result.put("email", data.getEmail());
+//        result.put("email", data.getEmail());
 
         return result;
 

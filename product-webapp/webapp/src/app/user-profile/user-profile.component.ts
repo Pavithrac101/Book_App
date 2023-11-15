@@ -27,7 +27,7 @@ export class UserProfileComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.getUserDetails();
+    
     this.user = this.activatedRoute.snapshot.data['user'];
     // let email  = this.activatedRoute.snapshot.paramMap.get('email');
     // console.log(email);
@@ -37,7 +37,7 @@ export class UserProfileComponent implements OnInit {
     // })
   }
   getUserDetails(){
-    this.userService.getUser().subscribe(
+    this.userService.getUserList().subscribe(
       (resp: User[]) => {
         console.log(resp);
         this.user = resp;

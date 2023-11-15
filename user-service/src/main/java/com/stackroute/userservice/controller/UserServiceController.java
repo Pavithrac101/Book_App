@@ -3,10 +3,14 @@ package com.stackroute.userservice.controller;
 import com.stackroute.userservice.domain.User;
 import com.stackroute.userservice.exception.UserAlreadyExitsException;
 import com.stackroute.userservice.service.UserService;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 @RestController
@@ -31,10 +35,23 @@ public class UserServiceController {
         return responseEntity;
 
     }
-    @GetMapping("/user/{email}")
-    public ResponseEntity<?> getUserDetails(@PathVariable String email){
-        User user=userService.viewUserProfile(email);
-        return new ResponseEntity<>(user,HttpStatus.OK);
+    @GetMapping("/user/userdata")
+    public ResponseEntity<?> getAllUsers(HttpServletRequest request) {
+        System.out.println("header" +request.getHeader("Authorization"));
+        Claims claims = (Claims) request.getAttribute("claims");
+//        System.out.println("email from claims :: " + claims.getSubject());
+        String email = claims.getSubject();
+        System.out.println("email :: "+email);
+        List<User>users=userService.getAllUsers(email);
+
+
+
+
+        responseEntity = new ResponseEntity<>(users,HttpStatus.OK);
+        return responseEntity;
+
+
+
     }
     @PutMapping("/userdata/{email}")
     public ResponseEntity<?> updateUser(@RequestBody User user, @PathVariable String email){
