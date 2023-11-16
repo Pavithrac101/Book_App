@@ -13,6 +13,7 @@ public interface BookService {
     Book addBook(Book book) throws BookAlreadyExistsException;
     boolean removeBook(int bookId) throws BookNotFoundException;
     List<Book> getAllBooks();
+    List<Book> getBooksBySellerEmail(String sellerEmail);
 
     Book getBookByBookId(int bookId) throws BookNotFoundException;
     Book updateBook( int bookId,Book book) throws BookNotFoundException;

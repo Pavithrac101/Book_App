@@ -12,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode
-@Document
+@Document /*to map a class to noSQL database */
 public class Book {
     @MongoId
     private int bookId;

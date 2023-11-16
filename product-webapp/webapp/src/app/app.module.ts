@@ -38,6 +38,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { UserupdateComponent } from './userupdate/userupdate.component';
 import {MatSelectModule} from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MyBooksComponent } from './components/my-books/my-books.component';
+
 
 
 @NgModule({
@@ -58,6 +60,7 @@ import { MatOptionModule } from '@angular/material/core';
   UpdateBookDetailsComponent,
   CreateBookComponent,
   AddToCartComponent,
+  MyBooksComponent,
   // UpdateBookComponent,
   // AddBookComponent
   ],

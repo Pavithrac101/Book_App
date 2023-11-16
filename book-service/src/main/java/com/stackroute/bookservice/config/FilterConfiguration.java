@@ -16,7 +16,7 @@ public class FilterConfiguration {
         //step 1 : location of filter
         filterRegistrationBean.setFilter(new BookFliter());
         //step 2: intercepted url on which filter has to be applied
-        filterRegistrationBean.addUrlPatterns("/api/v2/sellBook");
+        filterRegistrationBean.addUrlPatterns("/api/v2/sellBook","/api/v2/books");
         return filterRegistrationBean;
     }
 }

@@ -46,6 +46,13 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public List<Book> getBooksBySellerEmail(String sellerEmail) {
+        System.out.println(bookRepository.getBooksBySellerEmailId(sellerEmail));
+        return bookRepository.getBooksBySellerEmailId(sellerEmail);
+
+    }
+
+    @Override
     public Book getBookByBookId(int bookId) throws BookNotFoundException {
        if (this.bookRepository.findById(bookId).isEmpty()){
            throw new BookNotFoundException();
@@ -119,6 +126,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book sellBook(Book book) {
+
         Book optionalBook = bookRepository.save(book);
         System.out.println("Result from repository::"+optionalBook);
         return optionalBook;

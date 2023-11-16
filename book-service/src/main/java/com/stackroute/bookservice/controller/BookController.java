@@ -48,7 +48,7 @@ public class BookController {
       }
     }
     // http://localhost:5555/api/v1/books
-    @GetMapping("/books")
+    @GetMapping("/books/all")
     public ResponseEntity<?> getAllBooks(){
         System.out.println("The get all books being called");
         List<Book> books =bookService.getAllBooks();
@@ -111,7 +111,15 @@ public class BookController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Book not found or not available for sale.");
         }
     }
-    // http://localhost:5555/api/v1/rentBook/{bookId}
+    @GetMapping("/books")
+    public ResponseEntity<?> sellerBooks(HttpServletRequest request){
+        System.out.println("entering the seller handler method");
+        String email=(String) request.getAttribute("a");
+        System.out.println("email as seller books"+email);
+        List<Book> books=bookService.getBooksBySellerEmail(email);
+        return new ResponseEntity<>(books,HttpStatus.OK);
+    }
+//     http://localhost:5555/api/v1/rentBook/{bookId}
 
     // Controller method for renting a book
     @PutMapping("/rentBook/{bookId}")

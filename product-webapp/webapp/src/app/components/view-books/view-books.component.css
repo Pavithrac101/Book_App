@@ -4,6 +4,13 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
 }
+.my-books{
+  text-align: center;
+}
+.b1{
+  border: 2px skyblue solid;
+  padding: 20px;
+}
 .card {
   width: 400px;
   height: 550px;
