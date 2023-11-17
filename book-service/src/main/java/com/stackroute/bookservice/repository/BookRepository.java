@@ -17,4 +17,7 @@ public interface BookRepository extends MongoRepository<Book, Integer> {
 //    Optional<User> findUserByUserName(String username);
 @Query("{'bookId' : {$eq: [?0]}}")
 Book findBookByBookId(int bookId);
+
+    @Query("{sellerEmailId: ?0}")                                         // SQL Equivalent : SELECT * FROM BOOK where author = ?
+    List<Book> getBooksBySellerEmailId(String sellerEmailId);
 }

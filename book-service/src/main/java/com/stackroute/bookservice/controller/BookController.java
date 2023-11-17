@@ -37,18 +37,24 @@ public class BookController {
 //    }
     // http://localhost:5555/api/v1/bookService/remove/{id}
     @DeleteMapping("/bookService/remove/{id}")
-    public ResponseEntity<?> removeBookById(@PathVariable int id) throws BookNotFoundException {
-      if (id != -1){
-        try{  this.bookService.removeBook(id);
-        return ResponseEntity.ok().build();}
-      catch (BookNotFoundException ex){
-          throw new BookNotFoundException();
-      } } else {
-          return new ResponseEntity<>("Book Object Null",HttpStatus.NOT_FOUND);
-      }
-    }
+    public ResponseEntity<?> removeBookById(@PathVariable int id,HttpServletRequest request) throws BookNotFoundException {
+        System.out.println("entering the seller handler method");
+        String email = (String) request.getAttribute("a");
+            if (id != -1) {
+                try {
+                    this.bookService.removeBook(id);
+                    return ResponseEntity.ok().build();
+                } catch (BookNotFoundException ex) {
+                    throw new BookNotFoundException();
+                }
+            } else {
+                return new ResponseEntity<>("Book Object Null", HttpStatus.NOT_FOUND);
+            }
+
+     }
+
     // http://localhost:5555/api/v1/books
-    @GetMapping("/books")
+    @GetMapping("/books/all")
     public ResponseEntity<?> getAllBooks(){
         System.out.println("The get all books being called");
         List<Book> books =bookService.getAllBooks();
@@ -111,7 +117,15 @@ public class BookController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Book not found or not available for sale.");
         }
     }
-    // http://localhost:5555/api/v1/rentBook/{bookId}
+    @GetMapping("/books")
+    public ResponseEntity<?> sellerBooks(HttpServletRequest request){
+        System.out.println("entering the seller handler method");
+        String email=(String) request.getAttribute("a");
+        System.out.println("email as seller books"+email);
+        List<Book> books=bookService.getBooksBySellerEmail(email);
+        return new ResponseEntity<>(books,HttpStatus.OK);
+    }
+//     http://localhost:5555/api/v1/rentBook/{bookId}
 
     // Controller method for renting a book
     @PutMapping("/rentBook/{bookId}")

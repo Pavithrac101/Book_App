@@ -1,186 +1,192 @@
 <div class="container">
-    <h1 class="header">Add Book</h1>
-  
-    <form (submit)="submitForm()" class="form-container">
-        <ng-container *ngIf="!submitted">
-          <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="bookId">Book Id</mat-label>
-        <input
-        matInput
-          type="number"
-          class="form-control"
-          id="bookId"
-          [(ngModel)]="book.bookId"
-          name="bookId"
-          required
+  <h1 class="header">Add Book</h1>
+
+  <form (submit)="submitForm()" class="form-container">
+    <ng-container *ngIf="!submitted">
+      <div class="form-group">
+        <mat-form-field class="full-width">
+          <mat-label for="bookId">Book Id</mat-label>
+          <input 
+          matInput
+          placeholder="bookId"
+            type="number"
+            class="form-control"
+            id="bookId"
+            [(ngModel)]="book.bookId"
+            name="bookId"
+            required
+            aria-label="bookId"
         />
-      </mat-form-field>
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="title">title</mat-label>
-        <input
-        matInput
-          type="text"
-          class="form-control"
-          id="title"
-          [(ngModel)]="book.title"
-          name="title"
-          required
-        />
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="title">title</mat-label>
+          <input
+          matInput
+          placeholder="title"
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="book.title"
+            name="title"
+            required
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="isbn">Isbn</mat-label>
-        <input
-        matInput
-          type="number"
-          class="form-control"
-          id="isbn"
-          [(ngModel)]="book.isbn"
-          name="isbn"
-          required
-        />
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="isbn">Isbn</mat-label>
+          <input
+            placeholder="Isbn"
+            matInput
+            type="number"
+            class="form-control"
+            id="isbn"
+            [(ngModel)]="book.isbn"
+            name="isbn"
+            required
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="publicationYear">publicationYear</mat-label>
-        <input
-        matInput
-        type="number"
-          class="form-control"
-          id="publicationYear"
-          
-          [(ngModel)]="book.publicationYear"
-          name="publicationYear"
-        >
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="publicationYear">publicationYear</mat-label>
+          <input
+          placeholder="publicationYear"
+            matInput
+            type="number"
+            class="form-control"
+            id="publicationYear"
+            [(ngModel)]="book.publicationYear"
+            name="publicationYear"
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="genre">genre</mat-label>
-        <mat-select [(ngModel)]="book.genre" name="genre" id="genre">
-          <mat-option value="option1">Self-Help Book</mat-option>
-          <mat-option value="option2">Tragedy</mat-option>
-          <mat-option value="option3">Personal Development, spiritual</mat-option>
-          <mat-option value="option3">comedy ,romance, drama</mat-option>
-          <mat-option value="option3"> Moral Book</mat-option>
-          <mat-option value="option3">Science and Fiction</mat-option>
-          <!-- Add more options as needed -->
-        </mat-select>
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="genre">genre</mat-label>
+          <mat-select [(ngModel)]="book.genre" name="genre" id="genre">
+            <mat-option value="option1">Self-Help Book</mat-option>
+            <mat-option value="option2">Tragedy</mat-option>
+            <mat-option value="option3"
+              >Personal Development, spiritual</mat-option
+            >
+            <mat-option value="option3">comedy ,romance, drama</mat-option>
+            <mat-option value="option3"> Moral Book</mat-option>
+            <mat-option value="option3">Science and Fiction</mat-option>
+            <!-- Add more options as needed -->
+          </mat-select>
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="language">language</mat-label>
-        <input
-        matInput
-        type="text"
-          class="form-control"
-          id="language"
-          
-          [(ngModel)]="book.language"
-          name="language"
-        >
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="language">language</mat-label>
+          <input
+          placeholder="language"
+            matInput
+            type="text"
+            class="form-control"
+            id="language"
+            [(ngModel)]="book.language"
+            name="language"
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="pageCount">pageCount</mat-label>
-        <input
-        matInput
-        type="number"
-          class="form-control"
-          id="pageCount"
-          
-          [(ngModel)]="book.pageCount"
-          name="pageCount"
-        >
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="pageCount">pageCount</mat-label>
+          <input
+            matInput
+            placeholder="pageCount"
+            type="number"
+            class="form-control"
+            id="pageCount"
+            [(ngModel)]="book.pageCount"
+            name="pageCount"
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="description">description</mat-label>
-        <input
-        matInput
-        type="text"
-          class="form-control"
-          id="description"
-          
-          [(ngModel)]="book.description"
-          name="description"
-        >
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="description">description</mat-label>
+          <input
+            matInput
+            placeholder="description"
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="book.description"
+            name="description"
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="price">price</mat-label>
-        <input
-        matInput
-        type="number"
-          class="form-control"
-          id="price"
-          
-          [(ngModel)]="book.price"
-          name="price"
-        >
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="price">price</mat-label>
+          <input
+          placeholder="price"
+            matInput
+            type="number"
+            class="form-control"
+            id="price"
+            [(ngModel)]="book.price"
+            name="price"
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="available">available</mat-label>
-        <input
-        matInput
-        type="text"
-          class="form-control"
-          id="available"
-          
-          [(ngModel)]="book.available"
-          name="available"
-        >
-      </mat-form-field>
-      </div>
-      
-      <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="author">author</mat-label>
-        <input
-        matInput
-        type="text"
-          class="form-control"
-          id="author"
-          
-          [(ngModel)]="book.author"
-          name="author"
-        >
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="available">available</mat-label>
+          <input
+            matInput
+            placeholder="available"
+            type="text"
+            class="form-control"
+            id="available"
+            [(ngModel)]="book.available"
+            name="available"
+          />
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="publisher">publisher</mat-label>
-        <input
-        matInput
-        type="text"
-          class="form-control"
-          id="publisher"
-         
-          [(ngModel)]="book.publisher"
-          name="publisher"
-        >
-      </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label for="author">author</mat-label>
+          <input
+            matInput
+            placeholder="author"
+            type="text"
+            class="form-control"
+            id="author"
+            [(ngModel)]="book.author"
+            name="author"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="full-width">
+          <mat-label for="publisher">publisher</mat-label>
+          <input
+            placeholder="publisher"
+            matInput
+            type="text"
+            class="form-control"
+            id="publisher"
+            [(ngModel)]="book.publisher"
+            name="publisher"
+          />
+        </mat-form-field>
       </div>
 
       <!-- <div class="form-group">
@@ -199,24 +205,30 @@
       </div> -->
 
       <div class="form-group">
-      <mat-form-field class="full-width">
-        <mat-label for="imageURL">imageURL</mat-label>
-        <input
-        matInput
-        type="url"
-          class="form-control"
-          id="imageURL"
-        
-          [(ngModel)]="book.imageURL"
-          name="imageURL"
-        >
+        <mat-form-field class="full-width">
+          <mat-label for="imageURL">imageURL</mat-label>
+          <input
+          placeholder="imageURL"
+            matInput
+            type="url"
+            class="form-control"
+            id="imageURL"
+            [(ngModel)]="book.imageURL"
+            name="imageURL"
+          />
         </mat-form-field>
-  </div>
-      <button mat-raised-button type="submit" color="primary"class="btn btn-primary">Add</button>
-        </ng-container>
+      </div>
+      <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        class="btn btn-primary"
+      >
+        Add
+      </button>
+    </ng-container>
     <div *ngIf="submitted">
-        <!-- <h4>Book was submitted successfully!</h4> -->
-        </div>
-    </form>
-  </div>
-  
+      <!-- <h4>Book was submitted successfully!</h4> -->
+    </div>
+  </form>
+</div>
