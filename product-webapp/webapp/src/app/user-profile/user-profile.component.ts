@@ -37,14 +37,14 @@ export class UserProfileComponent implements OnInit {
     // })
   }
   getUserDetails(){
-    this.userService.getUserList().subscribe(
-      (resp: User[]) => {
-        console.log(resp);
-        this.user = resp;
-      }, (err) => {
-        console.log(err);
-      }
-    )
+    // this.userService.getUserList().subscribe(
+    //   (resp: User[]) => {
+    //     console.log(resp);
+    //     this.user = resp;
+    //   }, (err) => {
+    //     console.log(err);
+    //   }
+    // )
   }
 
 }

@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Optional;
 
-
+//@CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1")
 public class UserServiceController {
@@ -38,11 +39,14 @@ public class UserServiceController {
     @GetMapping("/user/userdata")
     public ResponseEntity<?> getAllUsers(HttpServletRequest request) {
         System.out.println("header" +request.getHeader("Authorization"));
+
+
         Claims claims = (Claims) request.getAttribute("claims");
-//        System.out.println("email from claims :: " + claims.getSubject());
+       System.out.println("email from claims :: " + claims.getSubject());
         String email = claims.getSubject();
+//        String email=(String) request.getAttribute("email");
         System.out.println("email :: "+email);
-        List<User>users=userService.getAllUsers(email);
+        Optional<User> users=userService.getAllUsers(email);
 
 
 

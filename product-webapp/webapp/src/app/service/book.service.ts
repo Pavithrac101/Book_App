@@ -10,19 +10,19 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
   getAllBooks(){
-    return this.http.get(`http://localhost:5555/api/v1/books`);
+    return this.http.get(`http://localhost:9000/api/v2/books`);
   }
 
   getBookById(bookId: number){
-    return this.http.get(`http://localhost:5555/api/v1/book/${bookId}`);
+    return this.http.get(`http://localhost:9000/api/v2/book/${bookId}`);
   }
 
   updateBook(bookId: number,book :any ){
-    return this.http.put(`http://localhost:5555/api/v1/updateBook/${bookId}`,book);
+    return this.http.put(`http://localhost:9000/api/v2/updateBook/${bookId}`,book);
   }
 
   removeBookById(bookId: number){
-    return this.http.delete(`http://localhost:5555/api/v1/bookService/remove/{id}`);
+    return this.http.delete(`http://localhost:9000/api/v2/bookService/remove/{id}`);
   }
   
   create(book: any): Observable<any> {  const token = localStorage.getItem("jwt");
@@ -31,7 +31,7 @@ export class BookService {
   });
   let requestOptions={headers : httpHeader}
   console.log(requestOptions);
-    return this.http.post(`http://localhost:5555/api/v1/sellBook`, book,requestOptions);
+    return this.http.post(`http://localhost:9000/api/v2/sellBook`, book,requestOptions);
   }
 
   // addBook(book: any){
