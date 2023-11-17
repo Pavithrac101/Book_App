@@ -6,15 +6,17 @@
       <div class="form-group">
         <mat-form-field class="full-width">
           <mat-label for="bookId">Book Id</mat-label>
-          <input
-            matInput
+          <input 
+          matInput
+          placeholder="bookId"
             type="number"
             class="form-control"
             id="bookId"
             [(ngModel)]="book.bookId"
             name="bookId"
             required
-          />
+            aria-label="bookId"
+        />
         </mat-form-field>
       </div>
 
@@ -22,7 +24,8 @@
         <mat-form-field class="full-width">
           <mat-label for="title">title</mat-label>
           <input
-            matInput
+          matInput
+          placeholder="title"
             type="text"
             class="form-control"
             id="title"
@@ -37,6 +40,7 @@
         <mat-form-field class="full-width">
           <mat-label for="isbn">Isbn</mat-label>
           <input
+            placeholder="Isbn"
             matInput
             type="number"
             class="form-control"
@@ -52,6 +56,7 @@
         <mat-form-field class="full-width">
           <mat-label for="publicationYear">publicationYear</mat-label>
           <input
+          placeholder="publicationYear"
             matInput
             type="number"
             class="form-control"
@@ -83,6 +88,7 @@
         <mat-form-field class="full-width">
           <mat-label for="language">language</mat-label>
           <input
+          placeholder="language"
             matInput
             type="text"
             class="form-control"
@@ -98,6 +104,7 @@
           <mat-label for="pageCount">pageCount</mat-label>
           <input
             matInput
+            placeholder="pageCount"
             type="number"
             class="form-control"
             id="pageCount"
@@ -112,6 +119,7 @@
           <mat-label for="description">description</mat-label>
           <input
             matInput
+            placeholder="description"
             type="text"
             class="form-control"
             id="description"
@@ -125,6 +133,7 @@
         <mat-form-field class="full-width">
           <mat-label for="price">price</mat-label>
           <input
+          placeholder="price"
             matInput
             type="number"
             class="form-control"
@@ -140,6 +149,7 @@
           <mat-label for="available">available</mat-label>
           <input
             matInput
+            placeholder="available"
             type="text"
             class="form-control"
             id="available"
@@ -154,6 +164,7 @@
           <mat-label for="author">author</mat-label>
           <input
             matInput
+            placeholder="author"
             type="text"
             class="form-control"
             id="author"
@@ -167,6 +178,7 @@
         <mat-form-field class="full-width">
           <mat-label for="publisher">publisher</mat-label>
           <input
+            placeholder="publisher"
             matInput
             type="text"
             class="form-control"
@@ -196,6 +208,7 @@
         <mat-form-field class="full-width">
           <mat-label for="imageURL">imageURL</mat-label>
           <input
+          placeholder="imageURL"
             matInput
             type="url"
             class="form-control"

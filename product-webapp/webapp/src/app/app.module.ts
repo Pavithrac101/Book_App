@@ -25,26 +25,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatError, MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import { MatInput, MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 // import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 // import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { UserupdateComponent } from './userupdate/userupdate.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MyBooksComponent } from './components/my-books/my-books.component';
-
-
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
     AppComponent,
+
     HeaderComponent,
     UserRegistrationComponent,
     UserLoginComponent,
@@ -52,27 +52,25 @@ import { MyBooksComponent } from './components/my-books/my-books.component';
     HomeComponent,
     AboutUsComponent,
     UserupdateComponent,
-  //   BookCardComponent,
-  // BookListComponent,
-  // BookManagerComponent,
-  BookDetailsComponent,
-  ViewBooksComponent,
-  UpdateBookDetailsComponent,
-  CreateBookComponent,
-  AddToCartComponent,
-  MyBooksComponent,
-  // UpdateBookComponent,
-  // AddBookComponent
+    //   BookCardComponent,
+    // BookListComponent,
+    // BookManagerComponent,
+    BookDetailsComponent,
+    ViewBooksComponent,
+    UpdateBookDetailsComponent,
+    CreateBookComponent,
+    AddToCartComponent,
+    MyBooksComponent,
+    
+    // UpdateBookComponent,
+    // AddBookComponent
   ],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
-  
     BrowserAnimationsModule,
-    
-  
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
@@ -82,15 +80,14 @@ import { MyBooksComponent } from './components/my-books/my-books.component';
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
-    MatOptionModule
+    MatOptionModule,
+    MatSelectModule
+   
   ],
-providers: [],
-bootstrap: [AppComponent]
+  // exports:[
+  //   MatFormFieldControl,
+  // ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
-  
-
-
-
-
+export class AppModule {}

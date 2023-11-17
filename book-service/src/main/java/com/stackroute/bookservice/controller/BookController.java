@@ -37,16 +37,22 @@ public class BookController {
 //    }
     // http://localhost:5555/api/v1/bookService/remove/{id}
     @DeleteMapping("/bookService/remove/{id}")
-    public ResponseEntity<?> removeBookById(@PathVariable int id) throws BookNotFoundException {
-      if (id != -1){
-        try{  this.bookService.removeBook(id);
-        return ResponseEntity.ok().build();}
-      catch (BookNotFoundException ex){
-          throw new BookNotFoundException();
-      } } else {
-          return new ResponseEntity<>("Book Object Null",HttpStatus.NOT_FOUND);
-      }
-    }
+    public ResponseEntity<?> removeBookById(@PathVariable int id,HttpServletRequest request) throws BookNotFoundException {
+        System.out.println("entering the seller handler method");
+        String email = (String) request.getAttribute("a");
+            if (id != -1) {
+                try {
+                    this.bookService.removeBook(id);
+                    return ResponseEntity.ok().build();
+                } catch (BookNotFoundException ex) {
+                    throw new BookNotFoundException();
+                }
+            } else {
+                return new ResponseEntity<>("Book Object Null", HttpStatus.NOT_FOUND);
+            }
+
+     }
+
     // http://localhost:5555/api/v1/books
     @GetMapping("/books/all")
     public ResponseEntity<?> getAllBooks(){

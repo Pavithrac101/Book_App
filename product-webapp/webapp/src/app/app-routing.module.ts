@@ -14,6 +14,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserupdateComponent } from './userupdate/userupdate.component';
 import { DeauthgaurdGuard } from './deauthgaurd.guard';
 import { AuthgaurdGuard } from './authgaurd.guard';
+import { MyBooksComponent } from './components/my-books/my-books.component';
 
 const routes: Routes = [
   { path: 'book-details/:id', component: BookDetailsComponent, },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'update-book-details/:id', component: UpdateBookDetailsComponent,canActivate:[AuthgaurdGuard] },
   { path: 'create-book', component: CreateBookComponent ,canActivate:[AuthgaurdGuard]},
   { path: 'add-to-cart', component: AddToCartComponent,canActivate:[AuthgaurdGuard] },
+  { path: 'my-books', component: MyBooksComponent, canActivate:[AuthgaurdGuard]},
   {
     component: HomeComponent,
     path: '',
@@ -39,7 +41,10 @@ const routes: Routes = [
   component:AboutUsComponent,
   path:'about-us'
 },
-
+{ path: 'reload',
+    redirectTo: 'manage',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

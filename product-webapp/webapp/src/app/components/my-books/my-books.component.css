@@ -1,0 +1,125 @@
+.card-container {
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+  }
+  .my-books{
+    text-align: center;
+  }
+  .b1{
+    border: 2px skyblue solid;
+    padding: 20px;
+  }
+  .card {
+    width: 400px;
+    height: 550px;
+  }
+  .hero-image {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/04/90/51/38/1000_F_490513853_kAVSEYFTKn4FIi7mm63yIiXSVRxj10NH.jpg');
+   /* background-image: url('/webapp/src/assets/images/bk.jpg'); */
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Adjust the height as needed */
+  }
+  
+  .heading{
+  text-align:start;
+  margin: 30px;
+  padding: 30px;
+  /* font-weight:bolder; */
+  }
+  .card img {
+    width: 100%;
+    height: 370px;
+    object-fit:fill;
+  }
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Add some padding and margin to the container for spacing */
+  /* .container {
+      padding: 20px;
+      margin-top: 20px;
+    } */
+    
+    /* Style the card headers */
+    /* .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    
+    .card-text {
+      font-size: 1rem;
+    } */
+    
+    /* Center the card image */
+    /* .card-img-top {
+      display: block;
+      margin: 0 auto;
+    } */
+    
+    /* Add a border and some box-shadow for a clean look */
+    /* .card {
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+     */
+    /* Add some spacing between cards */
+    /* .col-md-4 {
+      margin-bottom: 20px;
+    } */
+    
+    /* Center the "View Details" button */
+    /* .btn-primary {
+      display: block;
+      margin: 10px auto;
+    } */
+    
+    /* Style the overall page heading */
+    /* h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    } */
+    
