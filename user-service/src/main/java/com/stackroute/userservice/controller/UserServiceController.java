@@ -46,12 +46,12 @@ public class UserServiceController {
         String email = claims.getSubject();
 //        String email=(String) request.getAttribute("email");
         System.out.println("email :: "+email);
-        Optional<User> users=userService.getAllUsers(email);
 
 
 
 
-        responseEntity = new ResponseEntity<>(users,HttpStatus.OK);
+
+        responseEntity = new ResponseEntity<>(userService.getAllUsers(email), HttpStatus.OK);
         return responseEntity;
 
 

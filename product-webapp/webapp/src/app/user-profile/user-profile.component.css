@@ -1,0 +1,33 @@
+#card1{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    height: 50%;
+    
+    
+   
+    
+}
+.form {
+    display: flex;
+    flex-direction:column;
+    padding-top: 20px;
+    margin-left: 15em;
+    width: 50%;
+    font-size: medium;
+    border: 2px 2px 2px 2px solid blueviolet;
+    margin-top: 40px;
+    box-shadow: 2px 2px 2px 2px blue;
+    
+    }
+    mat-form-field {
+        display: block;
+        width: 100%;
+        height:20%;
+      }
+      h1{
+        margin: 20px;
+      }
+      button {
+        margin-left: 15em;
+    }

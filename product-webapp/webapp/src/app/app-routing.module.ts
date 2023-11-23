@@ -37,6 +37,8 @@ const routes: Routes = [
   component:UserProfileComponent,
   path:'user-profile',canActivate:[AuthgaurdGuard]
 },
+{component:UserupdateComponent,
+   path:'userupdate/:email',canActivate:[AuthgaurdGuard]},
 {
   component:AboutUsComponent,
   path:'about-us'

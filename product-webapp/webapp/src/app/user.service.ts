@@ -12,6 +12,7 @@ export class UserService {
   isLogInError=new EventEmitter<boolean>(false);
  private baseUrl = 'http://localhost:8085/api/auth/v1/register';
  private baseUrl1 = 'http://localhost:8085/api/auth/v1/login';
+ private baseUrl2 = 'http://localhost:8081/api/v1/user';
 
   requestHeader = new HttpHeaders({ Authorization: 'True' });
   constructor(private http: HttpClient) {}
@@ -19,24 +20,26 @@ export class UserService {
     return this.http.post(this.baseUrl, data);
   }
   public userLogIn(data:any):Observable<any> {
-    const token = localStorage.getItem("jwt");
-    let httpHeader=new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
-    let requestOptions={headers : httpHeader}
-    console.log(requestOptions);
-    return this.http.post(this.baseUrl1 ,data,requestOptions
+    // const token = localStorage.getItem("jwt");
+    // let httpHeader=new HttpHeaders({
+    //   'Authorization': `Bearer ${token}`
+    // });
+    // let requestOptions={headers : httpHeader}
+    // console.log(requestOptions);
+    return this.http.post(this.baseUrl1 ,data
       
     );
   }
-  getUser():Observable<User[]>{
+  getUser():Observable<any>{
     const token = localStorage.getItem("jwt");
+  
+    console.log(token);
     let httpHeader=new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    let requestOptions={headers : httpHeader}
+    let requestOptions={headers:httpHeader}
     console.log(requestOptions);
-    return this.http.get<User[]>(this.baseUrl1+'userdata',requestOptions);
+    return this.http.get(this.baseUrl2+'/userdata',requestOptions);
 }
 getUsers(email:string){
   
@@ -48,15 +51,14 @@ getUsers(email:string){
   console.log(requestOptions);
   return this.http.get<User>(`http://localhost:8081/api/user/${email}`,requestOptions);
 }
-updateDetails(_email:any,data:any):Observable<any>{
-  const token = localStorage.getItem("jwt");
-  let httpHeader=new HttpHeaders({
-    'Authorization': `Bearer ${token}`
-  });
-  let requestOptions={headers : httpHeader}
-  console.log(requestOptions);
+// updateDetails(email:string,data:any):Observable<any>{
   
-  // let email='Wrc123456';
-  return this.http.put('http://localhost:8081/api/userdata/${email}',data);
+  
+  
+//   return this.http.put('http://localhost:8081/api/userdata/${email}',data);
+// }
+updateDetails(email: number,user :any ){
+  return this.http.put(`http://localhost:8081/api/v1/userdata/${email}`,user);
 }
+
 }

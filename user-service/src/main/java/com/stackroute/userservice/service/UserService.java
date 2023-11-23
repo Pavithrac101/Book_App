@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface UserService {
     User registerUser(User user) throws UserAlreadyExitsException;
-    public Optional<User> getAllUsers(String email);
+    public User getAllUsers(String email);
     public User updateUser(User user,String email);
 }

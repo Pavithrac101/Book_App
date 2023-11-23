@@ -10,41 +10,52 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  // userForm=this.fb.group({
-  //   email:['',Validators.required],
-  //   userId:['',Validators.required],
-  //   username:['',Validators.required],
-  //   password:['',Validators.required],
-  //   phoneNo:['',Validators.required],
-  //   occupation:['',Validators.required],
-  //   address:['',Validators.required]
+  
+        users!:any;
+        Object = Object;
+     item=true; 
+     ngOnInit(): void {
+     this.getUserDetails();
     
-  // })
-    user:User[]=[]
-  @Input()
-  userdata?: User
-  constructor(private activatedRoute: ActivatedRoute,private router:Router,private fb:FormBuilder,private userService:UserService){
-
   }
-  ngOnInit(): void {
-    
-    this.user = this.activatedRoute.snapshot.data['user'];
-    // let email  = this.activatedRoute.snapshot.paramMap.get('email');
-    // console.log(email);
-    // email && this.userService.getUsers(email).subscribe(data => {
-    // console.warn(data)
-    //   this.user= data;
-    // })
+  
+  constructor(private router:Router,private userService:UserService){
+   
   }
+ 
+  // getUserDetails(){
+  //   this.userService.getUser().subscribe(
+  //     (resp: User>) => {
+  //       console.log(resp);
+  //       this.users = resp;
+  //     }, (err) => {
+  //       console.log(err);
+  //     }
+  //   )
+  // }
   getUserDetails(){
-    // this.userService.getUserList().subscribe(
-    //   (resp: User[]) => {
-    //     console.log(resp);
-    //     this.user = resp;
-    //   }, (err) => {
-    //     console.log(err);
-    //   }
-    // )
+    this.userService.getUser().subscribe({
+      next: (data:any) => {
+        console.log('Response from user');
+        console.log(data);
+        this.users= data;
+      }, error: (err) => {
+        console.log("There is some error");
+        
+        console.log(err)
+      },
+    })
+    
+    // function deleteBook(){
+    // this.service.removeBookById().subscribe({
+    //   next: (data:any)=>{
+    //   alert("book deleted successfully");
+    //   console.log(data)}
+    // })}
+
+    
+    
+  }
   }
 
-}
+

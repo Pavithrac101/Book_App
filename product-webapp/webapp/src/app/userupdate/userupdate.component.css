@@ -1,0 +1,15 @@
+.form {
+    display: flex;
+    flex-direction:row;
+    padding-top: 20px;
+    margin-left: 15em;
+    width: 50%;
+    font-size: medium;
+    }
+    mat-form-field {
+        display: block;
+        width: 180%;
+      }
+    button {
+        margin-left: 25em;
+    }

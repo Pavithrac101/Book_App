@@ -19,7 +19,7 @@ export class UserRegistrationComponent implements OnInit {
     password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)]],
     confirmPassword: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)]],
     userId: ['', Validators.required],
-    phNo: ['', [Validators.pattern(/^[789]\d{9,9}$/)]],
+    phoneNo: ['', [Validators.pattern(/^[789]\d{9,9}$/)]],
     occupation:[''],
     address: [''],
   }, { validators: [this.mustMatchValidator] });
@@ -36,7 +36,7 @@ export class UserRegistrationComponent implements OnInit {
   
     get userId() { return this.profileForm.get("userId") }
   
-    get phNo() { return this.profileForm.get("phNo"); }
+    get phoneNo() { return this.profileForm.get("phoneNo"); }
   
     get password() { return this.profileForm.get("password"); }
   

@@ -10,35 +10,31 @@ import { UserService } from '../user.service';
   styleUrls: ['./userupdate.component.css']
 })
 export class UserupdateComponent implements OnInit{
-  user:User={}
+  user:any;
+  email!:string;
 
   constructor(private router:Router,private _snackBar:MatSnackBar,private actrouter:ActivatedRoute,private userservice:UserService){
 
   }
   ngOnInit(): void {
+    
     let email  = this.actrouter.snapshot.paramMap.get('email');
       console.log(email);
-      email && this.userservice.getUsers(email).subscribe(data => {
+      email && this.userservice.getUser().subscribe(data => {
       console.warn(data)
         this.user= data;
       })
   }
-  onUpdate():void{
-    
-    
-    this.userservice.updateDetails(this.user?.email,this.user).subscribe(
-      {next:(response) => {
-        console.log(response);
-        this.router.navigate(['/user-profile']);
-      },
-     error:(err) => {
-        console.log(err);}
-      }
-      ) 
-      this._snackBar.open('Congrats!!You have submiited the form!!', 'success', {
-        duration: 5000,
-        panelClass: ['mat-toolbar', 'mat-primary']
-      });
+  onUpdate(){
+    this.userservice.updateDetails(this.user.email,this.user).subscribe(data=>{
+    console.log(data);
+    this.router.navigate(['/']);
+    this._snackBar.open('Congrats!!You have updated successfully!!', 'success', {
+      duration: 1000,
+      panelClass: ['mat-toolbar', 'mat-primary']
+    })
+    })
+      ;
        
    
   }

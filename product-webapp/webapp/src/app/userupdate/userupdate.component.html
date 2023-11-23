@@ -1,6 +1,6 @@
  <div   class="update-details">
 
-    <form class="form" (ngSubmit)="onUpdate()" >
+    <form class="form" >
     <fieldset class="backcolor">
       <mat-form-field appearance="fill">
         <input matInput  [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"placeholder="UserName" type="text" id="userName"  />
@@ -16,7 +16,7 @@
 
 </mat-form-field>
 <mat-form-field appearance="fill">
-<input matInput [(ngModel)]="user.phoneNo" [ngModelOptions]="{standalone: true}" type="text" placeholder="phoneNo" id="phoneNo"
+<input matInput [(ngModel)]="user.phoneNo" [ngModelOptions]="{standalone: true}" type="text" placeholder="phone Number" id="phoneNo"
 />
 </mat-form-field>
 <mat-form-field appearance="fill">
@@ -33,9 +33,9 @@
 
 
     </fieldset>
-<button color="primary" mat-button mat-raised-button 
-type="submit">Update-details</button>
+
 
 
 </form>
+<button color="primary" mat-button (click)="onUpdate()">Update-details</button>
 </div>

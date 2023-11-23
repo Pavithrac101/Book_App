@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserLoginComponent implements OnInit {
   showLogin = false;
   authError: String = '';
+  hide=true;
   loginForm = this.fb.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
@@ -45,7 +46,7 @@ export class UserLoginComponent implements OnInit {
         localStorage.setItem("jwt",this.responseData.Token);
         
          
-         this.router.navigate(['/user-profile']);
+         this.router.navigate(['/']);
         
       },
      error:(err) => {
