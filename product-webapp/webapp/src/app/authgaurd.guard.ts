@@ -16,7 +16,7 @@ export class AuthgaurdGuard implements CanActivate {
       if(token!=null)
       return true;
       else
-      this.router.navigate(['/user-registration'])
+      this.router.navigate(['/user-login'])
       return false
   }
   

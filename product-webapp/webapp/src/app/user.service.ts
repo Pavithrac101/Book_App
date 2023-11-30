@@ -10,9 +10,9 @@ import { User } from './module/user';
 export class UserService {
   isUserLoggedIn=new BehaviorSubject<boolean>(false);
   isLogInError=new EventEmitter<boolean>(false);
- private baseUrl = 'http://localhost:8085/api/auth/v1/register';
- private baseUrl1 = 'http://localhost:8085/api/auth/v1/login';
- private baseUrl2 = 'http://localhost:8081/api/v1/user';
+ private baseUrl = 'http://localhost:9000/api/auth/v1/register';
+ private baseUrl1 = 'http://localhost:9000/api/auth/v1/login';
+ private baseUrl2 = 'http://localhost:9000/api/v1/user';
 
   requestHeader = new HttpHeaders({ Authorization: 'True' });
   constructor(private http: HttpClient) {}
@@ -49,7 +49,7 @@ getUsers(email:string){
   });
   let requestOptions={headers : httpHeader}
   console.log(requestOptions);
-  return this.http.get<User>(`http://localhost:8081/api/user/${email}`,requestOptions);
+  return this.http.get<User>(`http://localhost:9000/api/user/${email}`,requestOptions);
 }
 // updateDetails(email:string,data:any):Observable<any>{
   
@@ -57,8 +57,8 @@ getUsers(email:string){
   
 //   return this.http.put('http://localhost:8081/api/userdata/${email}',data);
 // }
-updateDetails(email: number,user :any ){
-  return this.http.put(`http://localhost:8081/api/v1/userdata/${email}`,user);
+updateDetails(email:string,user :any ){
+  return this.http.put(`http://localhost:9000/api/v1/userdata/${email}`,user);
 }
 
 }

@@ -12,7 +12,7 @@ public class ApiGatewayApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiGatewayApplication.class, args);
-
+	}
 	@Bean
 	public RouteLocator myRoutes(RouteLocatorBuilder routeLocatorBuilder){
 		System.out.println("api gateway started");
