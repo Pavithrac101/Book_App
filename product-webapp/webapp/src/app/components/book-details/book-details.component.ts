@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/models/book.model';
 import { BookService } from 'src/app/service/book.service';
 import { AppComponent } from 'src/app/app.component';
@@ -15,7 +15,8 @@ export class BookDetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private bookService: BookService // Use your service here if created
+    private bookService: BookService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class BookDetailsComponent {
  AppComponent.addcart.push(this.book);
  console.log(AppComponent.addcart);
   }
-  
+ 
   
 }
 

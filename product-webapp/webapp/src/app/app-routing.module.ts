@@ -15,6 +15,8 @@ import { UserupdateComponent } from './userupdate/userupdate.component';
 import { DeauthgaurdGuard } from './deauthgaurd.guard';
 import { AuthgaurdGuard } from './authgaurd.guard';
 import { MyBooksComponent } from './components/my-books/my-books.component';
+import { OrdercomponentsComponent } from './components/ordercomponents/ordercomponents.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 
 const routes: Routes = [
   { path: 'book-details/:id', component: BookDetailsComponent, },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'create-book', component: CreateBookComponent ,canActivate:[AuthgaurdGuard]},
   { path: 'add-to-cart', component: AddToCartComponent,canActivate:[AuthgaurdGuard] },
   { path: 'my-books', component: MyBooksComponent, canActivate:[AuthgaurdGuard]},
+  { path: 'order-book/:id', component:OrdercomponentsComponent, canActivate:[AuthgaurdGuard]},
+  { path:'my-orders',component:MyOrdersComponent, canActivate:[AuthgaurdGuard]},
   {
     component: HomeComponent,
     path: '',

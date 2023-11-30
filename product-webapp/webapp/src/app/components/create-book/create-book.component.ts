@@ -25,6 +25,7 @@ book: Book={
   author:'',
   publisher:'',
   rented:false,
+  sellerEmailId:'',
   imageURL:''
 }
 
@@ -46,6 +47,7 @@ submitForm() {
     author:this.book.author,
     publisher:this.book.publisher,
     rented:this.book.rented,
+    sellerEmailId:this.book.sellerEmailId,
     imageURL:this.book.imageURL
   };
   this.service.create(book).subscribe({next:(res)=>{console.log(res);

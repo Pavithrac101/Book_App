@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/models/book.model';
 import { BookService } from 'src/app/service/book.service';
@@ -8,13 +8,14 @@ import { BookService } from 'src/app/service/book.service';
   templateUrl: './my-books.component.html',
   styleUrls: ['./my-books.component.css']
 })
-export class MyBooksComponent {
+export class MyBooksComponent implements OnInit{
 // deleteBook() {
 // throw new Error('Method not implemented.');
 // }
   books: any[]=[];
   bookId!: number;
   book: Book = {} as Book;
+  bookPresent?: boolean;
 
   
 
@@ -33,35 +34,32 @@ export class MyBooksComponent {
       },
     })
     
-    // function deleteBook(){
-    // this.service.removeBookById().subscribe({
-    //   next: (data:any)=>{
-    //   alert("book deleted successfully");
-    //   console.log(data)}
-    // })}
-
-    
     
   }
-  // ngOnInit() {
-  //   this.route.paramMap.subscribe((params) => {
-  //     const bookId = parseInt(params.get('id')!); // Get the book ID from the route
-  //     // Use your service to fetch book details by ID and assign it to this.book
-  //     console.log(this.bookId);
-  //     this.service.getBookById(bookId).subscribe(
-  //       (response: any)=>{
-  //         this.book=response;
-  //       }
-  //     )
-  //   });
-  // }
+  
+
+  ngOnInit(): void {
+      this.service.sellerBooks().subscribe(
+        {
+        next:data => {
+          if (data!= null) {
+            this.bookPresent = true
+          } else {
+            this.bookPresent = false
+          }
+        }
+      })
+  }
 
    deleteBook(bookId:number) {
     this.service.removeBookById(bookId).subscribe({
       next: (data: any) => {
        
         console.log(data);
-        this.router.navigateByUrl("/reload");
+        this.books =this.books.filter((bok: {bookId: number}) =>{
+          return bok.bookId != bookId
+        })
+        this.router.navigateByUrl("/my-book");
       },
       error: (error: any) => {
         console.error("Error deleting book:", error);

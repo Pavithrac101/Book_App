@@ -1,0 +1,112 @@
+<div class="container">
+    <h1 class="header">Order Page</h1>
+  
+    <form (submit)="submitForm()" class="form-container">
+      <ng-container *ngIf="!submitted">
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label for="addressLine1">Address Line 1</mat-label>
+            <input 
+            matInput
+            placeholder="addressLine1"
+              type="text"
+              class="form-control"
+              id="addressLine1"
+              [(ngModel)]="order.addressLine1"
+              name="addressLine1"
+              required
+              aria-label="addressLine1"
+          />
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label for="addressLine2">Address Line 2</mat-label>
+            <input
+            matInput
+            placeholder="addressLine2"
+              type="text"
+              class="form-control"
+              id="addressLine2"
+              [(ngModel)]="order.addressLine2"
+              name="addressLine2"
+              required
+            />
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label for="city">City</mat-label>
+            <input
+              placeholder="city"
+              matInput
+              type="text"
+              class="form-control"
+              id="city"
+              [(ngModel)]="order.city"
+              name="city"
+              required
+            />
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <mat-label for="state">State</mat-label>
+            <input
+            placeholder="state"
+              matInput
+              type="text"
+              class="form-control"
+              id="state"
+              [(ngModel)]="order.state"
+              name="state"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field class="full-width">
+              <mat-label for="pincode">Pincode</mat-label>
+              <input
+              placeholder="pincode"
+                matInput
+                type="number"
+                class="form-control"
+                id="pincode"
+                [(ngModel)]="order.pinCode"
+                name="pincode"
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field class="full-width">
+              <mat-label for="landmark">Landmark</mat-label>
+              <input
+              placeholder="landmark"
+                matInput
+                type="text"
+                class="form-control"
+                id="landmark"
+                [(ngModel)]="order.landMark"
+                name="landmark"
+              />
+            </mat-form-field>
+          </div>
+        <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        class="btn btn-primary"
+      >
+        Place Order
+      </button>
+    </ng-container>
+    <div *ngIf="submitted">
+      <!-- <h4>Book was submitted successfully!</h4> -->
+    </div>
+  </form>
+</div>

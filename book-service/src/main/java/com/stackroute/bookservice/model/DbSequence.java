@@ -4,14 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode
-public class RentalInfo {
+public class DbSequence {
     @MongoId
-    private Date acquisitionDate;
+    private  String id;
+    private int seqNo=11;
 }

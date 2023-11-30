@@ -30,6 +30,7 @@ public class BookFliter extends GenericFilter {
         String email1=(String)claims.get("email");
         System.out.println("recived email"+email1);
         request.setAttribute("a",email1);
+
         filterChain.doFilter(request,response);
     }
 }

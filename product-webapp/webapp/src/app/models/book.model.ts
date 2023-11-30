@@ -1,57 +1,59 @@
 export class Book {
-     bookId: number;
-     title: string;
-     isbn: string;
-     publicationYear: number;
-     genre: string;
-     language:string;
-     pageCount: number;
-     description: string;
-     price: number;
-  
-    available: boolean;
-    // private RentalInfo rentalInfo;
-    author:string;
-    publisher: string;
-    rented: boolean;
-    imageURL?: string
+  bookId: number;
+  title: string;
+  isbn: string;
+  publicationYear: number;
+  genre: string;
+  language: string;
+  pageCount: number;
+  description: string;
+  price: number;
 
+  available: boolean;
+  // private RentalInfo rentalInfo;
+  author: string;
+  publisher: string;
+  rented: boolean;
+  sellerEmailId: string;
+  imageURL?: string;
 
-    constructor(
-        bookId: number,
-     title: string,
-     isbn: string,
+  constructor(
+    bookId: number,
+    title: string,
+    isbn: string,
 
-
-     publicationYear: number,
-     genre: string,
-     language:string,
+    publicationYear: number,
+    genre: string,
+    language: string,
     pageCount: number,
     description: string,
     price: number,
     available: boolean,
     // private RentalInfo rentalInfo;
-    author:string,
+    author: string,
     publisher: string,
     rented: boolean,
+
+    sellerEmailId: string,
     imageURL?: string
-    ){
-        this.bookId= bookId;
-        this.title= title;
-        this.isbn= isbn;
-        this.publicationYear= publicationYear;
-        this.genre= genre;
-        this.language=language;
-       this.pageCount=pageCount;
-       this.description=description;
-       this.price=price;
-       this.available=available;
-       // private RentalInfo rentalInfo;
-       this.author=author;
-       this.publisher=publisher;
-       this.rented=rented;
-       this.imageURL=imageURL
-    }
+  ) {
+    this.bookId = bookId;
+    this.title = title;
+    this.isbn = isbn;
+    this.publicationYear = publicationYear;
+    this.genre = genre;
+    this.language = language;
+    this.pageCount = pageCount;
+    this.description = description;
+    this.price = price;
+    this.available = available;
+    // private RentalInfo rentalInfo;
+    this.author = author;
+    this.publisher = publisher;
+    this.rented = rented;
+    this.sellerEmailId = sellerEmailId;
+    this.imageURL = imageURL;
+  }
 }
 
 // export const BOOKS: Book[]=[
@@ -69,8 +71,8 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Sujit Lalwani',
 //        publisher: 'Partridge Publishing',
-//        rented: false, 
-//        imageURL:'../../assets/images/life-simplified.jpg'  
+//        rented: false,
+//        imageURL:'../../assets/images/life-simplified.jpg'
 
 //     },
 //     {
@@ -87,7 +89,7 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Shiv Khera',
 //        publisher: 'Bloomsbury India',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/you-can-win.jpg'
 //     },
 //     {
@@ -104,7 +106,7 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Francesc Miralles',
 //        publisher: 'Hutchinson',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/ikigai-novel-book.jpg'
 //     },
 //     {
@@ -121,7 +123,7 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Andrew Matthews',
 //        publisher: 'Embassy Books',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/follow-your-heart.jpg'
 //     },
 //     {
@@ -138,7 +140,7 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'William Shakespeare',
 //        publisher: 'Maple Press',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/romeo-and-juliet.jpg'
 //     },
 //     {
@@ -155,7 +157,7 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Snehalata Rohidekar',
 //        publisher: 'Wisdom World',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/inferiority-complex.jpg'
 //     },
 //     {
@@ -172,7 +174,7 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Don Miguel Ruiz',
 //        publisher: 'Hay House',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/the-four-agreements.jpg'
 //     },
 //     {
@@ -189,7 +191,7 @@ export class Book {
 //      // private RentalInfo rentalInfo;
 //      author:'Chetan Bhagat',
 //      publisher: 'Rupa Publications India',
-//      rented: false,   
+//      rented: false,
 //      imageURL:'../../assets/images/half girlfriend.jpg'
 //   },
 //     {
@@ -206,7 +208,7 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Maple press',
 //        publisher: 'Maple press',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/Tenali-Raman-Stories-For-Kids.jpg'
 //     },
 //     {
@@ -223,8 +225,8 @@ export class Book {
 //        // private RentalInfo rentalInfo;
 //        author:'Chetan Bhagat',
 //        publisher: 'Rupa Publications India',
-//        rented: false,   
+//        rented: false,
 //        imageURL:'../../assets/images/2_States_-_The_Story_Of_My_Marriage.jpg'
 //     },
-    
+
 // ]

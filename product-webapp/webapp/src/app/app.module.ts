@@ -40,6 +40,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MyBooksComponent } from './components/my-books/my-books.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { OrdercomponentsComponent } from './components/ordercomponents/ordercomponents.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
@@ -61,6 +63,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     CreateBookComponent,
     AddToCartComponent,
     MyBooksComponent,
+    OrdercomponentsComponent,
+    MyOrdersComponent,
     
     // UpdateBookComponent,
     // AddBookComponent

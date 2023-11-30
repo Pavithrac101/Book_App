@@ -2,13 +2,9 @@ package com.stackroute.bookservice.service;
 
 import com.stackroute.bookservice.exception.BookAlreadyExistsException;
 import com.stackroute.bookservice.exception.BookNotFoundException;
-import com.stackroute.bookservice.exception.UserNotFoundException;
 import com.stackroute.bookservice.model.Book;
-import com.stackroute.bookservice.model.RentalInfo;
-import com.stackroute.bookservice.model.User;
 import com.stackroute.bookservice.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -132,31 +128,32 @@ public class BookServiceImpl implements BookService {
         return optionalBook;
     }
 
-    @Override
-    public boolean rentBook(int bookId) {
-        Optional<Book> optionalBook = bookRepository.findById(bookId);
-
-        if (optionalBook.isPresent()) {
-            Book book = optionalBook.get();
-
-            // Check if the book is available for rent
-            if (book.isAvailable()) {
-                // Update the book status to rented
-                book.setAvailable(false);
-
-                // Create and set the acquisition date for the rental
-                RentalInfo rentalInfo = new RentalInfo();
-                rentalInfo.setAcquisitionDate(new Date());
-                book.setRentalInfo(rentalInfo);
-
-                // Save the updated book
-                bookRepository.save(book);
-
-                return true; // Return true to indicate successful rental
-            }
+//    @Override
+//    public boolean rentBook(int bookId) {
+//        Optional<Book> optionalBook = bookRepository.findById(bookId);
+//
+//        if (optionalBook.isPresent()) {
+//            Book book = optionalBook.get();
+//
+//            // Check if the book is available for rent
+//            if (book.isAvailable()) {
+//                // Update the book status to rented
+//                book.setAvailable(false);
+//
+//                // Create and set the acquisition date for the rental
+//                RentalInfo rentalInfo = new RentalInfo();
+//                rentalInfo.setAcquisitionDate(new Date());
+//                book.setRentalInfo(rentalInfo);
+//
+//                // Save the updated book
+//                bookRepository.save(book);
+//
+//                return true; // Return true to indicate successful rental
+//            }
         }
+//
+//        // If the book is not found or not available for rent, return false
+//        return false;
+//    }
 
-        // If the book is not found or not available for rent, return false
-        return false;
-    }
-}
+
