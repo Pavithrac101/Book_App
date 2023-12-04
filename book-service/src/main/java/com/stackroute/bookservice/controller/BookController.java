@@ -4,6 +4,7 @@ import com.stackroute.bookservice.exception.BookAlreadyExistsException;
 import com.stackroute.bookservice.exception.BookNotFoundException;
 import com.stackroute.bookservice.model.Book;
 import com.stackroute.bookservice.service.BookService;
+import com.stackroute.bookservice.service.SequenceGeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +16,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import static com.stackroute.bookservice.model.Book.SEQUENCE_NAME;
+
 @RestController
 //@CrossOrigin("*")
 @RequestMapping("/api/v2")
 public class BookController {
     @Autowired
     private BookService bookService;
+    @Autowired
+    private SequenceGeneratorService sequenceGeneratorService;
 // http://localhost:5555/api/v1/bookService/add
 //    @PostMapping("/bookService/add")
 //    public ResponseEntity<?> addBook(@RequestBody Book book) throws BookAlreadyExistsException{
@@ -108,6 +113,7 @@ public class BookController {
         System.out.println("entering the handler method");
         String email=(String)request.getAttribute("a");
         book.setSellerEmailId(email);
+        book.setBookId(sequenceGeneratorService.getSequenceNumber(SEQUENCE_NAME));
         Book success = this.bookService.sellBook(book);
         System.out.println(email);
 
@@ -128,15 +134,15 @@ public class BookController {
 //     http://localhost:5555/api/v1/rentBook/{bookId}
 
     // Controller method for renting a book
-    @PutMapping("/rentBook/{bookId}")
-    public ResponseEntity<?> rentBook(@PathVariable int bookId) {
-        boolean success = this.bookService.rentBook(bookId);
-        if (success) {
-            return ResponseEntity.ok("Book rented successfully.");
-        } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Book not found or not available for rent.");
-        }
-    }
+//    @PutMapping("/rentBook/{bookId}")
+//    public ResponseEntity<?> rentBook(@PathVariable int bookId) {
+//        boolean success = this.bookService.rentBook(bookId);
+//        if (success) {
+//            return ResponseEntity.ok("Book rented successfully.");
+//        } else {
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Book not found or not available for rent.");
+//        }
+//    }
 }
 
 

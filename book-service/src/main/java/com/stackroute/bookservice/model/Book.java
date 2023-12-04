@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -14,6 +15,8 @@ import java.util.Date;
 @EqualsAndHashCode
 @Document /*to map a class to noSQL database */
 public class Book {
+    @Transient
+    public static final String SEQUENCE_NAME="user_sequence";
     @MongoId
     private int bookId;
     private String title;
@@ -25,7 +28,6 @@ public class Book {
     private String description;
     private float price;
     private boolean available;
-    private RentalInfo rentalInfo;
     private String author;
     private String publisher;
     private boolean rented;

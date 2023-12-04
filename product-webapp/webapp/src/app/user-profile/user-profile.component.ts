@@ -46,12 +46,7 @@ export class UserProfileComponent implements OnInit {
       },
     })
     
-    // function deleteBook(){
-    // this.service.removeBookById().subscribe({
-    //   next: (data:any)=>{
-    //   alert("book deleted successfully");
-    //   console.log(data)}
-    // })}
+    
 
     
     

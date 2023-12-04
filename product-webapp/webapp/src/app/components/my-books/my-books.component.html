@@ -22,6 +22,9 @@
         </mat-card>
       </div>
     </div>
+     <!-- Display message if no books are available -->
+      <div *ngIf="books.length === 0">
+     <h1 style="text-align: center; font-weight: bold; color: blueviolet;"> Oops!! no books available currently</h1>
   </div>
   <footer class="bg-dark text-light pt-5">
     <div class="container px-5">

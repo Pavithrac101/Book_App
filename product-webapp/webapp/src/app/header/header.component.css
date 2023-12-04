@@ -1,5 +1,6 @@
 .space-buttons {
     flex:1 1 auto;
+    
 }
 .navbar {
     position:sticky;
@@ -7,4 +8,40 @@
    left: 0;/* Stick it to the left edge of the viewport;*/
   width: 100%;/*Make it span the full width of the viewport;*/
   z-index: 1000 ;/*Adjust the z-index as needed to ensure its below other elements;*/
+  justify-content: space-between;
 }
+a{
+    text-decoration: none;
+    color:whitesmoke
+}
+
+ul{
+    list-style: none;
+}
+.dropbtn:hover, .dropbtn:focus {
+    
+    cursor: pointer;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 16px;
+  }
+  #myDropdown {
+    
+    position: absolute;
+    
+    
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   
+    z-index: 1;
+  }
+  
+  #myDropdown button {
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100px;
+  }
+  .dropdown a:hover {background-color: #ddd;}

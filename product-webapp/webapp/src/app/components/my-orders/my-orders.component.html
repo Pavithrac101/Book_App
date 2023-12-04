@@ -1,0 +1,35 @@
+<!-- orders.component.html -->
+
+<div *ngIf="orders.length > 0; else noOrders">
+    <h2>Your Orders</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Book Name</th>
+          <th>User EmailID</th>
+          <th>Book Price</th>
+          <th>Order Date</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          
+          <td>{{ order.orderId }}</td>
+          <!-- <td>{{ getBookName(order.bookId) }}</td>
+        <td>{{ getBookPrice(order.bookId) }}</td> -->
+          <td>{{ order.book.title }}</td>
+          <td>{{ order.userEmailId }}</td>
+          <td>{{ order.book.price }}</td>
+          <td>{{order.orderDate | date}}</td>
+        </tr>
+      <!-- </tr> -->
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #noOrders>
+    <p>No orders available.</p>
+  </ng-template>
+  
