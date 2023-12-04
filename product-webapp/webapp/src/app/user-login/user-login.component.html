@@ -2,17 +2,18 @@
 <div>
     <div  class="sign-up">
         <h1>Login</h1>
-        <form class="form"(ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <form class="form-container"(ngSubmit)="onSubmit()" [formGroup]="loginForm">
+          <div class="form-group">
            <fieldset class="backcolor">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="full-width">
                 <input matInput type="email" placeholder="email" id="email"
-                                                                       formControlName="email">
+                                                                       formControlName="email" class="form-control" >
                 <mat-error *ngIf="email?.errors?.required">
                   Email should be required
                </mat-error>
              </mat-form-field>
-        <mat-form-field appearance="fill">
-             <input matInput type="password" placeholder="Password" id="password" formControlName="password" [type]="hide ? 'password' : 'text'">
+        <mat-form-field appearance="fill" class="full-width">
+             <input matInput type="password" placeholder="Password" id="password" formControlName="password" [type]="hide ? 'password' : 'text'" class="form-control" >
              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>    
              <mat-error *ngIf="password?.errors?.required">
                     Password is required.
@@ -25,7 +26,7 @@
         <button color="primary" mat-button mat-raised-button 
         type="submit">LogIn</button>
 
-       
+      </div>   
   </form>
 
 </div>

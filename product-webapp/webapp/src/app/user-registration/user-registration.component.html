@@ -1,17 +1,18 @@
-<div class="register">
+<div class="container">
     <div *ngIf="!showLogin" class="sign-up">
         <h1>Registration Form</h1>
-        <form class="regForm" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
-            <fieldset class="backcolor">
-                   <mat-form-field appearance="fill">
-                         <input matInput placeholder="userName" type="text" id="userName" formControlName="userName" />
+        <form class="form-container" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+          <div class="form-group">
+            <fieldset class="backcolor" >
+                   <mat-form-field appearance="fill" class="full-width">
+                         <input matInput placeholder="userName" type="text" id="userName" formControlName="userName" class="form-control" />
                         <mat-error *ngIf="userName?.errors?.required">
                          Name is required.
                         </mat-error>
                     </mat-form-field>
                 
-                    <mat-form-field appearance="fill">
-                          <input matInput type="password" placeholder="Password" id="password" formControlName="password">
+                    <mat-form-field appearance="fill" class="full-width">
+                          <input matInput type="password" placeholder="Password" id="password" formControlName="password" class="form-control">
                           <mat-error *ngIf="password?.errors?.required">
                              Password is required.
                           </mat-error>
@@ -21,42 +22,42 @@
                             </mat-error>
     
                    </mat-form-field>
-                    <mat-form-field appearance="fill">
+                    <mat-form-field appearance="fill" class="full-width">
                        <input matInput type="password" placeholder="Confirm Password" id="confirmPassword"
-                        formControlName="confirmPassword">
+                        formControlName="confirmPassword" class="form-control">
                         <mat-error *ngIf="profileForm.errors?.mustMatch===false">
                         Password and Confirm Password should match.
                         </mat-error>
                      </mat-form-field>
            
             
-               <mat-form-field appearance="fill">
+               <mat-form-field appearance="fill" class="full-width">
                       <input matInput type="email" placeholder="email" id="email"
-                    formControlName="email">
+                    formControlName="email" class="form-control">
                       <mat-error *ngIf="email?.errors?.pattern">
                      Email should be required
                      </mat-error>
                 </mat-form-field>
-               <mat-form-field appearance="fill">
-                       <input matInput placeholder="userId" type="text" id="userId" formControlName="userId" />
+               <mat-form-field appearance="fill" class="full-width">
+                       <input matInput placeholder="userId" type="text" id="userId" formControlName="userId" class="form-control" />
                        <mat-error *ngIf="userId?.errors?.required">
                         UserId is required.
                       </mat-error>
                </mat-form-field>
             
-                <mat-form-field appearance="fill">
-                         <input matInput type="text" placeholder="Phone Number" id="phoneNo" formControlName="phoneNo">
+                <mat-form-field appearance="fill"class="full-width">
+                         <input matInput type="text" placeholder="Phone Number" id="phoneNo" formControlName="phoneNo" class="form-control">
                           <mat-error *ngIf="phoneNo?.errors?.pattern">
                          Valid phone number contains 10 digits starting with 7/8/9
                         </mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <input matInput placeholder="Occupation" type="text" id="occupation" formControlName="occupation" />
+                <mat-form-field appearance="fill" class="full-width">
+                  <input matInput placeholder="Occupation" type="text" id="occupation" formControlName="occupation" class="form-control" />
                   
                </mat-form-field>
                 
-               <mat-form-field appearance="fill">
-                  <input matInput placeholder="Address" type="text" id="address" formControlName="address" />
+               <mat-form-field appearance="fill"class="full-width">
+                  <input matInput placeholder="Address" type="text" id="address" formControlName="address" class="form-control" />
                   
                </mat-form-field>
         
@@ -67,7 +68,7 @@
    
             
            
-               <!-- <a class="auth-toggle-link" (click)="openLogin()">Already have account? Click for Login</a> -->
+                </div>   <!-- <a class="auth-toggle-link" (click)="openLogin()">Already have account? Click for Login</a> -->
          </form>
 
       </div>

@@ -1,0 +1,31 @@
+.heading{
+    width:35%;
+    height: 100px;
+    margin-left: 400px;
+    background-color: orangered;
+    margin-top: 60px;
+    text-align: center;
+    
+}
+.heading h1{
+    font-style: oblique;
+    font-size: 40px;
+    margin-top: 20px;
+}
+.objective{
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 6px;
+    border-color: orangered;
+    
+    
+    width: 60%;
+    height: 180px;
+    margin-top: 25px;
+    margin-left: 230px;
+}
+.objective h3{
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}

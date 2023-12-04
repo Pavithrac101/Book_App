@@ -5,13 +5,15 @@
         <div >
              <form class="form" >
                   <div *ngFor="let item of Object.keys(users)">
-                    <div [hidden]="item ===users.password"></div>
-                    <h1>{{item}}</h1>
-                    <mat-form-field appearance="fill">
-                      
-                      <input matInput/>{{users[item]}}</mat-form-field>
-                   
                     
+                    
+                    <div *ngIf="!(item=='password')">
+                      <h1>{{item}}:{{users[item]}}</h1>
+                    <!-- <mat-form-field appearance="fill">
+                      
+                      <input  matInput/>{{users[item]}}</mat-form-field> -->
+                   
+                    </div>
                     
                   </div>
                   
