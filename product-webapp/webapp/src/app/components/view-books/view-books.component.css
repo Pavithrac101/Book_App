@@ -1,11 +1,20 @@
 .card-container {
-  margin-left: 100px;
+ 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 50px;
+
+
 }
 .my-books{
   text-align: center;
+}
+#card{
+margin-right:-50px ;
+padding-right: -50px;
+border: solid beige;
+
+/* margin-left: -50px; */
 }
 .b1{
   border: 2px skyblue solid;
@@ -13,7 +22,7 @@
 }
 .card {
   width: 400px;
-  height: 550px;
+  height: 450px;
 }
 .hero-image {
   background-image: url('https://as1.ftcdn.net/v2/jpg/04/90/51/38/1000_F_490513853_kAVSEYFTKn4FIi7mm63yIiXSVRxj10NH.jpg');
