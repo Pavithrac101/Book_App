@@ -1,11 +1,11 @@
-.form {
+/* .form {
     display: flex;
     flex-direction:row;
     padding-top: 20px;
     margin-left: 15em;
     width: 50%;
     font-size: medium;
-    }
+    } */
     mat-form-field {
         display: block;
         width: 180%;
@@ -13,3 +13,43 @@
     button {
         margin-left: 25em;
     }
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      border: 30px; 
+      border-color: rgb(9, 9, 9);
+      background-color:rgb(246, 255, 254);
+      width: 600px;
+      margin: auto; /*.form-container the form horizontally*/
+    box-sizing:border-box;
+  }
+    
+   /* .backcolor{
+    background-color:aliceblue;
+  } */
+  mat-form-field {
+    display: block;
+  } 
+
+ 
+  button {
+    margin-right: 10px;
+    padding: 0 40px; 
+    margin:15px;
+    font-size: large;
+  }
+  .form-group {
+    margin: 10px 0;
+    width: 100%;
+  }
+.full-width {
+    width: 100%;
+    max-width: 600px; /* Adjust this value to control the width of the input fields */
+  }
+  .success {
+    background-color: purple;
+    color: #fff;}

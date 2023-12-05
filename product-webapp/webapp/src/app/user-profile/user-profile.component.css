@@ -31,3 +31,6 @@
       button {
         margin-left: 15em;
     }
+    .success {
+      background-color: purple;
+      color: #fff;}

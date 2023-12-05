@@ -1,30 +1,32 @@
- <div   class="update-details">
+ <div   class="container">
 
-    <form class="form" >
+    <form class="form-container" >
+      <div class="form-group">
     <fieldset class="backcolor">
-      <mat-form-field appearance="fill">
-        <input matInput  [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"placeholder="UserName" type="text" id="userName"  />
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput  [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"placeholder="email" type="text" id="email"  class="form-control" />
+       
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput  [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"placeholder="UserName" type="text" id="userName"   class="form-control" />
        
    </mat-form-field>
           
-<mat-form-field appearance="fill">
-  <input matInput  [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"placeholder="email" type="text" id="email"  />
- 
-</mat-form-field>
-<mat-form-field appearance="fill">
-<input matInput [(ngModel)]="user.userId" [ngModelOptions]="{standalone: true}" placeholder="userId" type="text" id="userId"  />
+
+<mat-form-field appearance="fill" class="full-width">
+<input matInput [(ngModel)]="user.userId" [ngModelOptions]="{standalone: true}" placeholder="userId" type="text" id="userId" class="form-control"  />
 
 </mat-form-field>
-<mat-form-field appearance="fill">
-<input matInput [(ngModel)]="user.phoneNo" [ngModelOptions]="{standalone: true}" type="text" placeholder="phone Number" id="phoneNo"
+<mat-form-field appearance="fill" class="full-width">
+<input matInput [(ngModel)]="user.phoneNo" [ngModelOptions]="{standalone: true}" type="text" placeholder="phone Number" id="phoneNo"  class="form-control"
 />
 </mat-form-field>
-<mat-form-field appearance="fill">
-    <input matInput [(ngModel)]="user.address" [ngModelOptions]="{standalone: true}" type="text" placeholder="address" id="address"
+<mat-form-field appearance="fill" class="full-width">
+    <input matInput [(ngModel)]="user.address" [ngModelOptions]="{standalone: true}" type="text" placeholder="address" id="address" class="form-control"
     />
 </mat-form-field>
-    <mat-form-field appearance="fill">
-        <input matInput [(ngModel)]="user.occupation" [ngModelOptions]="{standalone: true}" type="text" placeholder="occupation" id="occupation"
+    <mat-form-field appearance="fill" class="full-width">
+        <input matInput [(ngModel)]="user.occupation" [ngModelOptions]="{standalone: true}" type="text" placeholder="occupation" id="occupation"  class="form-control"
         />
 
 </mat-form-field>
@@ -34,8 +36,8 @@
 
     </fieldset>
 
-
-
+  </div>
+  <button class="success" mat-button (click)="onUpdate()">Update-details</button>
 </form>
-<button color="primary" mat-button (click)="onUpdate()">Update-details</button>
-</div>
+
+
