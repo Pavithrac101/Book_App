@@ -4,6 +4,13 @@
         <form class="form-container" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
           <div class="form-group">
             <fieldset class="backcolor" >
+              <mat-form-field appearance="fill" class="full-width">
+                <input matInput type="email" placeholder="email" id="email"
+              formControlName="email" class="form-control">
+                <mat-error *ngIf="email?.errors?.pattern">
+               Email should be required
+               </mat-error>
+          </mat-form-field>
                    <mat-form-field appearance="fill" class="full-width">
                          <input matInput placeholder="userName" type="text" id="userName" formControlName="userName" class="form-control" />
                         <mat-error *ngIf="userName?.errors?.required">
@@ -31,13 +38,7 @@
                      </mat-form-field>
            
             
-               <mat-form-field appearance="fill" class="full-width">
-                      <input matInput type="email" placeholder="email" id="email"
-                    formControlName="email" class="form-control">
-                      <mat-error *ngIf="email?.errors?.pattern">
-                     Email should be required
-                     </mat-error>
-                </mat-form-field>
+               
                <mat-form-field appearance="fill" class="full-width">
                        <input matInput placeholder="userId" type="text" id="userId" formControlName="userId" class="form-control" />
                        <mat-error *ngIf="userId?.errors?.required">
@@ -63,7 +64,7 @@
         
              </fieldset>
                   <button color="accent" mat-button mat-raised-button type="reset">Reset</button>
-                 <button color="primary" mat-button mat-raised-button [disabled]="!profileForm.valid"
+                 <button class="success" mat-button mat-raised-button [disabled]="!profileForm.valid"
                  type="submit">Signup</button>
    
             

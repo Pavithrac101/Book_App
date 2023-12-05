@@ -57,5 +57,7 @@
     width: 100%;
     max-width: 600px; /* Adjust this value to control the width of the input fields */
   }
-
+  .success {
+    background-color: purple;
+    color: #fff;}
 

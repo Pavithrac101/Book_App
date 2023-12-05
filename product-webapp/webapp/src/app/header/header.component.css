@@ -9,10 +9,14 @@
   width: 100%;/*Make it span the full width of the viewport;*/
   z-index: 1000 ;/*Adjust the z-index as needed to ensure its below other elements;*/
   justify-content: space-between;
+  background-color: purple;
+}
+.navbar button{
+  background-color: palevioletred;
 }
 a{
     text-decoration: none;
-    color:whitesmoke
+    color:whitesmoke;
 }
 
 ul{
@@ -32,16 +36,30 @@ ul{
     position: absolute;
     
     
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow: auto;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
    
-    z-index: 1;
+    
   }
   
   #myDropdown button {
     color: black;
     text-decoration: none;
-    display: block;
     width: 100px;
   }
-  .dropdown a:hover {background-color: #ddd;}
+  #myDropdown button{
+    display: block;
+    background-color: deeppink;
+  }
+  .dropbtn {
+    background-color: deeppink;
+  }
+  .dropdown button:hover {background-color: #ddd;}
+  mat-icon{
+    margin-top: 5px;
+  }
+  .red-color {
+    color:red;
+    height: 10px;
+    
+}
+
