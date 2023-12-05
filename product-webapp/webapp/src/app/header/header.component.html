@@ -27,7 +27,7 @@
                     
         <div *ngIf="(item=='userName')">
              
-<div ><button mat-raised-button color="primary" (click)="toggleMenu()"  (blur)="closeDropDown()" class="dropbtn">hii, {{users[item]}}</button>
+<button mat-raised-button color="primary" (click)="toggleMenu()"  (blur)="closeDropDown()" class="dropbtn">hii, {{users[item]}}</button>
 <div id="myDropdown"  class="menu" *ngIf="isMenuopened">
     
      <button mat-raised-button color="primary" class="menu"   routerLink="/user-profile"><i class="fa fa-fw fa-user"></i>Profile</button>
@@ -39,7 +39,7 @@
 </div>
             
         </div>
-</div>
+
   
 
   
@@ -50,6 +50,5 @@
     <button mat-raised-button color="primary" routerLink="/about-us">About Us</button>
     
        
-    <button  (click)="logout()" mat-raised-button color="warn">Logout</button>
 </mat-toolbar>
   

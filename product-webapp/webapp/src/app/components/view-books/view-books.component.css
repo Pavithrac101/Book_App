@@ -25,11 +25,54 @@ border: solid beige;
   height: 450px;
 }
 .hero-image {
+ 
   background-image: url('https://as1.ftcdn.net/v2/jpg/04/90/51/38/1000_F_490513853_kAVSEYFTKn4FIi7mm63yIiXSVRxj10NH.jpg');
  /* background-image: url('/webapp/src/assets/images/bk.jpg'); */
-  background-size: cover;
+ filter:blur(4px);
+ -webkit-filter: blur(4px); 
+ background-size: cover;
   background-position: center;
   height: 600px; /* Adjust the height as needed */
+}
+.inner-hero{
+  width: 100vw;
+  height: 100vh;
+display: flex;
+flex-direction: column;
+position:absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.inner-hero h1{
+  font-size: 5em;
+  font-weight: bold;
+  background-image: linear-gradient(to left, violet, indigo, green, blue, rgb(0, 42, 255), rgb(255, 0, 191), rgb(255, 0, 0));
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+  margin-bottom: 0px;
+  line-height: 1.2;
+}
+.inner-hero a{
+  
+width: 200px;
+padding: 1em;
+
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 25px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.5em;
+border:3px solid purple;
+background-color:purple;
 }
 
 .heading{
