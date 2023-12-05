@@ -22,7 +22,29 @@
     </span>
     
   
+<<<<<<< HEAD
     
+=======
+    <div class="dropdown" *ngFor="let item of Object.keys(users)" >
+                    
+                    
+        <div *ngIf="(item=='userName')">
+             
+<button mat-raised-button color="primary" (click)="toggleMenu()"  (blur)="closeDropDown()" class="dropbtn">hii, {{users[item]}}</button>
+<div id="myDropdown"  class="menu" *ngIf="isMenuopened">
+    
+     <button mat-raised-button color="primary" class="menu"   routerLink="/user-profile"><i class="fa fa-fw fa-user"></i>Profile</button>
+     <button mat-raised-button color="primary" class="menu" [routerLink]="'/my-books/'">My Books</button>
+     <button mat-raised-button color="primary" class="menu"  [routerLink]="'/my-orders/'">My Orders</button>
+     <button  (click)="logout()" mat-raised-button color="warn">Logout</button>
+    
+</div>
+</div>
+            
+        </div>
+
+  
+>>>>>>> 2692a3d9d47d56b15d6da09222e5eb65894a9b2b
 
   
 
@@ -50,6 +72,9 @@
             
         </div>
        
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2692a3d9d47d56b15d6da09222e5eb65894a9b2b
 </mat-toolbar>
   

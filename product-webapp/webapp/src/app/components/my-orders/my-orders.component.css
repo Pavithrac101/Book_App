@@ -1,0 +1,13 @@
+.card {
+    width: 400px;
+    height: 450px;
+  }
+  .card img {
+    width: 100%;
+    height: 370px;
+    object-fit:fill;
+  }
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(1, 1fr);
+    }}

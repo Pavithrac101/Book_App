@@ -1,6 +1,6 @@
 <!-- orders.component.html -->
 
-<div *ngIf="orders.length > 0; else noOrders">
+<!-- <div *ngIf="orders.length > 0; else noOrders">
     <h2>Your Orders</h2>
     <table class="table">
       <thead>
@@ -17,19 +17,62 @@
         <tr *ngFor="let order of orders">
           
           <td>{{ order.orderId }}</td>
-          <!-- <td>{{ getBookName(order.bookId) }}</td>
-        <td>{{ getBookPrice(order.bookId) }}</td> -->
           <td>{{ order.book.title }}</td>
           <td>{{ order.userEmailId }}</td>
           <td>{{ order.book.price }}</td>
           <td>{{order.orderDate | date}}</td>
         </tr>
-      <!-- </tr> -->
       </tbody>
     </table>
   </div>
   
   <ng-template #noOrders>
     <p>No orders available.</p>
-  </ng-template>
+  </ng-template> -->
   
+  <!-- <div class="row mt-4 row-cols-3" *ngIf="orders.length > 0; else noOrders">
+   
+      <h2>Your Orders</h2>
+       <mat-card class="card">
+      <div class="col-lg-3 col-md-3 mb-3" *ngFor="let order of orders">
+       
+          <img mat-card-image [src]="order.book.imageURL" alt="{{order.book.title}}">
+          
+          <mat-card-content>
+            <h2>{{order.book.title}}</h2>
+            <p>OrderId: {{ order.orderId }}</p>
+            <p>UserEmailId: {{ order.userEmailId }}</p>
+            <p>Price: {{ order.price }}</p>
+            <p>Order Date: {{ order.orderDate | date }}</p>
+          </mat-card-content>
+      
+         
+        </mat-card>
+    </div></div>
+
+    <ng-template #noOrders>
+      <p>No orders available.</p>
+    </ng-template> --> 
+
+    
+    <div *ngIf="orders.length > 0; else noOrders">
+      <h2>Your Orders</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 mb-4" *ngFor="let order of orders">
+          <mat-card class="card">
+            <mat-card-content>
+              <h2>Order ID: {{ order.orderId }}</h2>
+              <p>Book Name: {{ order.book.title }}</p>
+              <p>User EmailID: {{ order.userEmailId }}</p>
+              <p>Book Price: {{ order.book.price }}</p>
+              <p>Order Date: {{ order.orderDate | date }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #noOrders>
+      <p>No orders available.</p>
+    </ng-template>
+    

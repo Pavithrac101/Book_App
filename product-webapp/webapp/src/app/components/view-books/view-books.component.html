@@ -1,22 +1,33 @@
 <div class="container-fluid">
   
-  <div class="hero-image">
-    <!-- <img src="/webapp/src/assets/images/books.jpeg" alt="book"> -->
-</div>
+  <div class="hero-image"></div>
+   <div class="inner-hero">
+    <h1> Explore ReadWagon today</h1>
+    <h2 style="font-size:xx-large; color:black; font-family:fantasy;">where old books find new homes!</h2>
+<div>
+    <a mat-button  [routerLink]="'/view-books/'">Buy Book</a>
+    <a mat-button [routerLink]="'/create-book/'">Sell Book</a>
+   </div></div>
+
 <div class="my-books">
   <br><br><br>
   <!-- <mat-card-actions>
     <a mat-button  [routerLink]="'/my-books/'">My Books</a>
     <a mat-button [routerLink]="'/my-orders/'">My Orders</a>
   </mat-card-actions> -->
+<<<<<<< HEAD
   <!-- <a class="b1" href="">my-books</a> -->
+=======
+ 
+>>>>>>> 2692a3d9d47d56b15d6da09222e5eb65894a9b2b
 </div>
-  <h1 class="heading">View Books</h1>
+
     <div class="card-container">
-    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books">
+      
+    <div class="col-lg-3 col-md-3 mb-3 " id="card" *ngFor="let book of books">
       <mat-card class="card">
         <img mat-card-image [src]="book.imageURL" alt="{{book.title}}">
-        <!-- <div class="hero-image"></div> -->
+        
         <mat-card-content>
           <h2>{{ book.title }}</h2>
           <p>Author: {{ book.author }}</p>
@@ -24,12 +35,13 @@
         </mat-card-content>
         <mat-card-actions>
           <a mat-button [routerLink]="'/book-details/' + book.bookId">View Details</a>
-          <!-- <a mat-button [routerLink]="'/update-book-details/' + book.bookId">Edit Book</a> -->
+          
         </mat-card-actions>
        
       </mat-card>
     </div>
   </div>
+
   
 </div>
 <footer class="bg-dark text-light pt-5">
